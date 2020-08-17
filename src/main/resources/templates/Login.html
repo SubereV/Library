@@ -1,0 +1,194 @@
+<link href="/OPAC/Resources/StyleSheet/Opac.unicode.css" type="text/css" rel="StyleSheet">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+	<HEAD>
+		<title>WShowDetail</title>
+		<meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR">
+		<meta content="Visual Basic .NET 7.1" name="CODE_LANGUAGE">
+		<meta content="JavaScript" name="vs_defaultClientScript">
+		<meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema">
+	</HEAD>
+	<body onload="ChangeFontType();if(eval('document.forms[0].txtCardNo'))document.forms[0].txtCardNo.focus();"
+		MS_POSITIONING="GridLayout">
+		<form name="Form1" method="post" action="WShowDetail.aspx?intItemID=9880" id="Form1">
+<input type="hidden" name="__VIEWSTATE" value="dDwtMTY2MzIxOTQxNjt0PDtsPGk8MT47PjtsPHQ8O2w8aTwxPjtpPDM+O2k8NT47aTw3PjtpPDk+O2k8MTE+O2k8MTM+O2k8MTU+O2k8MTc+O2k8MTk+O2k8MjE+O2k8MjM+O2k8MjU+O2k8Mjc+O2k8Mjk+O2k8MzE+O2k8MzM+O2k8MzU+O2k8Mzc+O2k8Mzk+O2k8NDE+O2k8NDM+O2k8NDU+O2k8NDc+O2k8NDk+O2k8NTE+O2k8NTM+O2k8NTU+O2k8NTY+O2k8NTg+O2k8NjA+O2k8NjI+O2k8NjQ+O2k8NjY+O2k8Njg+O2k8NzA+O2k8NzI+O2k8NzQ+O2k8NzY+O2k8Nzg+O2k8Nzk+O2k8ODM+O2k8ODQ+O2k8ODU+O2k8ODY+O2k8ODc+O2k8ODg+O2k8ODk+O2k8OTA+O2k8OTE+O2k8OTI+O2k8OTQ+O2k8OTY+O2k8OTg+O2k8MTAwPjtpPDEwMj47aTwxMDQ+O2k8MTA1PjtpPDEwNz47aTwxMDk+O2k8MTExPjtpPDExNT47aTwxMTY+O2k8MTE3PjtpPDExOD47aTwxMTk+O2k8MTIwPjtpPDEyMT47aTwxMjM+O2k8MTI1PjtpPDEyNz47aTwxMjk+O2k8MTMxPjtpPDEzMz47aTwxMzU+O2k8MTM3PjtpPDE0Mj47aTwxNDM+O2k8MTQ0PjtpPDE0NT47aTwxNDY+O2k8MTQ3PjtpPDE0OD47aTwxNDk+O2k8MTUwPjtpPDE1Mj47aTwxNTM+O2k8MTU0PjtpPDE1NT47aTwxNTc+O2k8MTU5PjtpPDE2MT47PjtsPHQ8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCOz47bDxIaeG7g24gdGjhu4sgxJHGoW4gZ2nhuqNuO2xiQnV0dG9uO2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7XyFTQjs+O2w8SGnhu4NuIHRo4buLIElTQkQ7bGJCdXR0b247aTwyPjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCOz47bDxIaeG7g24gdGjhu4sgxJHhuqd5IMSR4bunO2xiQnV0dG9uO2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7XyFTQjs+O2w8SGnhu4NuIHRo4buLIE1BUkM7bGJCdXR0b247aTwyPjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCO1Zpc2libGU7PjtsPMSQw6FuaCBk4bqldTtsYkJ1dHRvbjtpPDI+O288Zj47Pj47cDxsPE9uY2xpY2s7PjtsPHJldHVybiBNYXJrUmVjb3JkKDAsJzk4ODAnLCdRdcOhIGdp4bubaSBo4bqhbiBkb3dubG9hZCAhJyk7Pj4+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCO1Zpc2libGU7PjtsPFRyYW5nIGvhur90IHF14bqjO2xiQnV0dG9uO2k8Mj47bzxmPjs+PjtwPGw8T25jbGljazs+O2w8cmV0dXJuIFJldHVyblNob3dSZXN1bHQoJycsJzEnKTs+Pj47Oz47dDxwPHA8bDxUZXh0O0Nzc0NsYXNzO18hU0I7VmlzaWJsZTs+O2w8XDxcPDtsYkJ1dHRvbjtpPDI+O288Zj47Pj47cDxsPE9uY2xpY2s7PjtsPHJldHVybiBQcmVSZWNvcmQoOTg4MCwnJyk7Pj4+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztBY2Nlc3NLZXk7XyFTQjtWaXNpYmxlOz47bDwwO2xiVGV4dEJveDtcZTtpPDI+O288Zj47Pj47cDxsPE9uY2hhbmdlOz47bDxyZXR1cm4gQ2hnUmVjb3JkKCcnKTs+Pj47Oz47dDxwPHA8bDxUZXh0O0Nzc0NsYXNzO0FjY2Vzc0tleTtfIVNCO1Zpc2libGU7PjtsPDA7bGJUZXh0Qm94O1xlO2k8Mj47bzxmPjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCO1Zpc2libGU7PjtsPFw+XD47bGJCdXR0b247aTwyPjtvPGY+Oz4+O3A8bDxPbmNsaWNrOz47bDxyZXR1cm4gTmV4dFJlY29yZCg5ODgwLCcnKTs+Pj47Oz47dDxwPHA8bDxUZXh0Oz47bDxE4buvIGxp4buHdSBiacOqbiBt4bulYzs+Pjs+Ozs+O3Q8cDxwPGw8Q3NzQ2xhc3M7VGV4dDtfIVNCOz47bDxsYkxhYmVsO1w8VEFCTEUgV0lEVEg9MTAwJSBCT1JERVIgPSAwIGNsYXNzPSdsYkxhYmVsJ1w+XDxUUiBWQUxJR049J1RvcCdcPlw8VEQgV0lEVEg9JzE1MHB4J1w+XDxCXD4gROG6oW5nIHTDoGkgbGnhu4d1Olw8L0JcPlw8L1REXD5cPFREXD5UxrAgbGnhu4d1IG5nw7RuIG5n4buvIChTw6FjaClcPC9URFw+XDwvVFJcPlw8VFIgVkFMSUdOPSdUb3AnXD5cPFREIFdJRFRIPScxNTBweCdcPlw8Qlw+VGjDtG5nIHRpbiBtw7QgdOG6ozpcPC9CXD5cPC9URFw+IFw8VERcPlw8Qlw+IFNvbW1lcnZpbGxlLCBJYW5cPC9CXD5cPEJSXD4gU29mdHdhcmUgZW5naW5lZXJpbmcgLyBJYW4gU29tbWVydmlsbGVcPEJSXD4gSGFybG93IFw7IFNpbmdhcG9yZSA6IFBlYXJzb24sIDIwMTZcPEJSXD4gODEwIHBhZ2VzIDogaWxsdXN0cmF0aW9ucyAoc29tZSBjb2xvcikgXDsgMjQgY21cPC9CXD5cPEJSXD5cPFRSXD5cPFREXD5DYWxsIE51bWJlcjpcPC9URFw+IFw8VERcPiAwMDUuMSBTNjk3IFw8L1REXD5cPC9UUlw+XDwvVEFCTEVcPjtpPDI+Oz4+Oz47Oz47dDw7bDxpPDA+Oz47bDx0PDtsPGk8Mj47PjtsPHQ8cDxwPGw8TmF2aWdhdGVVcmw7PjtsPGphdmFzY3JpcHQ6T3BlbldpbmRvdygnV0hvbGRpbmdDb2xsZWN0aW9uLmFzcHg/aW50SXRlbUlEPTk4ODAnLCdIb2xkaW5nSW5mb3InLDYwMCwzNTAsMTAwLDEwMCk7Pj47Pjs7Pjs+Pjs+Pjt0PHA8cDxsPENzc0NsYXNzO1RleHQ7XyFTQjs+O2w8bGJMYWJlbDs7aTwyPjs+Pjs+Ozs+O3Q8cDxwPGw8Q3NzQ2xhc3M7VGV4dDtfIVNCOz47bDxsYkxhYmVsO1w8Qlw+RlNFLUhMOiBHVC9UVEhMXDwvQlw+IFsgUuG7l2kgXSAmbmJzcFw7VOG7lW5nOiAxMFw7Jm5ic3BcO1Lhu5dpOiA1XDsmbmJzcFw7QuG6rW46IDUmbmJzcFw7XDxBIEhSRUY9SmF2YXNjcmlwdDpPcGVuV2luZG93KCdXTG9jYXRpb25EaWFncmFtLmFzcHg/aW50SXRlbUlEPTk4ODAmaW50TG9jSUQ9OTUmeD01ODg0MTAxNjk4JnN0clNoZWxmPUEsQixDJywnTG9jYXRpb25EaWFncmFtJyw3MDAsNDAwLDEwMCwxMDAsJ3llcycpIGNsYXNzPSdsYkxpbmtGdW5jdGlvbidcPlPGoSDEkeG7k1w8L0FcPlw8QlJcPkdUL1RUSEwwMDEzMjAtOVw8QlJcPlw8Qlw+RlVETjogR1QvRE5DTlw8L0JcPiBbIFLhu5dpIF0gJm5ic3BcO1Thu5VuZzogOTFcOyZuYnNwXDtS4buXaTogMzZcOyZuYnNwXDtC4bqtbjogNTUmbmJzcFw7XDxBIEhSRUY9SmF2YXNjcmlwdDpPcGVuV2luZG93KCdXTG9jYXRpb25EaWFncmFtLmFzcHg/aW50SXRlbUlEPTk4ODAmaW50TG9jSUQ9NTkmeD04MDM1MTc0NzgyJnN0clNoZWxmPUEsQixDJywnTG9jYXRpb25EaWFncmFtJyw3MDAsNDAwLDEwMCwxMDAsJ3llcycpIGNsYXNzPSdsYkxpbmtGdW5jdGlvbidcPlPGoSDEkeG7k1w8L0FcPlw8QlJcPkvEkDpHVC9ETkNOMDAxMjc5LTMyMCwgR1QvRE5DTjAwMTQ1Ny03NSwgR1QvRE5DTjAwMTgxNi0yMSwgR1QvRE5DTjAwMjA2NS04M1w8QlJcPktNOkdUL0ROQ04wMDEzMjEtNVw8QlJcPjtpPDI+Oz4+Oz47Oz47dDxwPHA8bDxDc3NDbGFzcztUZXh0O18hU0I7PjtsPGxiTGFiZWw7O2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7XyFTQjs+O2w8VOG7lW5nIHPhu5EgYuG6o246O2xiTGFiZWw7aTwyPjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCOz47bDwxMDE7bGJMYWJlbDtpPDI+Oz4+Oz47Oz47dDxwPHA8bDxUZXh0O0Nzc0NsYXNzO18hU0I7PjtsPFPhu5EgYuG6o24gcuG7l2k6O2xiTGFiZWw7aTwyPjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCOz47bDw0MTtsYkxhYmVsO2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7XyFTQjs+O2w8KGvhu4MgY+G6oyBjw6FjIGLhuqNuIMSRxrDhu6NjIGdp4buvIGNo4buXKTtsYkxhYmVsO2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7XyFTQjs+O2w8U+G7kSBi4bqjbiDEkcaw4bujYyBnaeG7ryBjaOG7lzo7bGJMYWJlbDtpPDI+Oz4+Oz47Oz47dDxwPHA8bDxUZXh0O0Nzc0NsYXNzO18hU0I7PjtsPDA7bGJMYWJlbDtpPDI+Oz4+Oz47Oz47dDxwPHA8bDxUZXh0O0Nzc0NsYXNzO18hU0I7PjtsPE5nw6B5IHLhu5dpIHPhu5ttIG5o4bqldDtsYkxhYmVsO2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7XyFTQjs+O2w8MDtsYkxhYmVsO2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7XyFTQjs+O2w8XD5cPlw+IEtow7RuZyBjw7MgdGjDtG5nIHRpbiB44bq/cCBnacOhIFw8XDxcPCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDtsYkxhYmVsO2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7XyFTQjs+O2w8U+G7kSB5w6p1IGPhuqd1IGdp4buvIGNo4buXO2xiTGFiZWw7aTwyPjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCOz47bDwwO2xiTGFiZWw7aTwyPjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCOz47bDxcPlw+XD4g4bqkbiBwaOG6qW0ga2jDtG5nIHBo4bulYyB24bulIFw8XDxcPCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDtsYkxhYmVsO2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7XyFTQjs+O2w8XDx1XD5TXDwvdVw+4buRIHRo4bq7OjtsYkxhYmVsO2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPENzc0NsYXNzO0FjY2Vzc0tleTtfIVNCOz47bDxsYlRleHRCb3g7UztpPDI+Oz4+Oz47Oz47dDxwPHA8bDxUZXh0O0Nzc0NsYXNzO18hU0I7PjtsPE3huq10IFw8dVw+a1w8L3VcPmjhuql1OjtsYkxhYmVsO2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPENzc0NsYXNzO0FjY2Vzc0tleTtfIVNCOz47bDxsYlRleHRCb3g7SztpPDI+Oz4+Oz47Oz47dDxwPHA8bDxUZXh0O0Nzc0NsYXNzO18hU0I7PjtsPFw8dVw+xJBcPC91XD5LQ0I6O2xiTGFiZWw7aTwyPjs+Pjs+Ozs+O3Q8cDxwPGw8Q3NzQ2xhc3M7QWNjZXNzS2V5O18hU0I7PjtsPGxiVGV4dEJveDtEO2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7XyFTQjs+O2w8KENo4buJIG5o4bqtcCBraGkgbXXhu5FuIHnDqnUgY+G6p3UgbeG7mXQgxJBLQ0IgY+G7pSB0aOG7gyk7bGJMYWJlbDtpPDI+Oz4+Oz47Oz47dDxwPHA8bDxUZXh0O0Nzc0NsYXNzO18hU0I7PjtsPEhp4buHdSBs4buxYyB04bubaSBcPHVcPm5cPC91XD5nw6B5OjtsYkxhYmVsO2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPENzc0NsYXNzO0FjY2Vzc0tleTtfIVNCOz47bDxsYlRleHRCb3g7TjtpPDI+Oz4+Oz47Oz47dDxwPHA8bDxUZXh0O0Nzc0NsYXNzO05hdmlnYXRlVXJsO18hU0I7PjtsPEzhu4tjaDtsYkxpbmtGdW5jdGlvbjsjO2k8Mj47Pj47cDxsPG9uQ2xpY2s7PjtsPHBvcFVwQ2FsZW5kYXIodGhpcywgZG9jdW1lbnQuZm9ybXNbMF0udHh0VmFsaWREYXRlLCAnZGQvbW0veXl5eScsMjYpOz4+Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7QWNjZXNzS2V5O18hU0I7PjtsPMSQxINuZyBrw70gbcaw4bujbih1KTtsYkJ1dHRvbjtVO2k8Mj47Pj47cDxsPE9uY2xpY2s7PjtsPHJldHVybiBWYWxpZElucHV0KCdDaMawYSBuaOG6rXAgxJHhu6cgdGjDtG5nIHRpbiB0aOG6uycsJ0todcO0biBk4bqhbmcgbmfDoHkgdGjDoW5nIGtow7RuZyBo4bujcCBs4buHJywnZGQvbW0veXl5eScsJ05nw6B5IMSRxINuZyBrw70gbcaw4bujbiBo4bq/dCBoaeG7h3UgbOG7sWMgcGjhuqNpIGzhu5tuIGjGoW4gbmfDoHkgaGnhu4duIHThuqFpIScsJzE3LzA4LzIwMjAnKTs+Pj47Oz47dDxwPHA8bDxUZXh0O0Nzc0NsYXNzO0FjY2Vzc0tleTtfIVNCO1Zpc2libGU7PjtsPMSQ4bq3dCBjaOG7lyhvKTtsYkJ1dHRvbjtPO2k8Mj47bzxmPjs+PjtwPGw8T25jbGljazs+O2w8cmV0dXJuIFZhbGlkSW5wdXQoJ0NoxrBhIG5o4bqtcCDEkeG7pyB0aMO0bmcgdGluIHRo4bq7JywnS2h1w7RuIGThuqFuZyBuZ8OgeSB0aMOhbmcga2jDtG5nIGjhu6NwIGzhu4cnLCdkZC9tbS95eXl5JywnTmfDoHkgxJHEg25nIGvDvSBtxrDhu6NuIGjhur90IGhp4buHdSBs4buxYyBwaOG6o2kgbOG7m24gaMahbiBuZ8OgeSBoaeG7h24gdOG6oWkhJywnMTcvMDgvMjAyMCcpOz4+Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7XyFTQjs+O2w8U+G7kSB0aOG6uyBob+G6t2MgbeG6rXQga2jhuql1IGtow7RuZyBo4bujcCBs4buHO2xiTGFiZWw7aTwyPjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCOz47bDxT4buRIHRo4bq7IMSRw6MgYuG7iyBo4bq/dCBo4bqhbjtsYkxhYmVsO2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7XyFTQjs+O2w8WcOqdSBj4bqndSBuw6B5IMSRw6MgdOG7k24gdOG6oWk7bGJMYWJlbDtpPDI+Oz4+Oz47Oz47dDxwPHA8bDxUZXh0O0Nzc0NsYXNzO18hU0I7PjtsPFnDqnUgY+G6p3Ugdsaw4bujdCBxdcOhIGdp4bubaSBo4bqhbiDEkcaw4bujYyBtxrDhu6NuO2xiTGFiZWw7aTwyPjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCOz47bDxZw6p1IGPhuqd1IHbGsOG7o3QgcXXDoSBnaeG7m2kgaOG6oW4gZ2nhu68gY2jhu5c7bGJMYWJlbDtpPDI+Oz4+Oz47Oz47dDxwPHA8bDxUZXh0O0Nzc0NsYXNzO18hU0I7PjtsPELhuqFuIGtow7RuZyDEkcaw4bujYyBj4bqlcCBxdXnhu4FuIG3GsOG7o24gdMOgaSBsaeG7h3UgbsOgeTtsYkxhYmVsO2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7XyFTQjs+O2w8xJDEg25nIGvDvSB0aMOgbmggY8O0bmc7bGJMYWJlbDtpPDI+Oz4+Oz47Oz47dDxwPHA8bDxUZXh0O0Nzc0NsYXNzO18hU0I7PjtsPENoxrBhIG5o4bqtcCDEkeG7pyB0aMO0bmcgdGluIHRo4bq7O2xiTGFiZWw7aTwyPjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCOz47bDxOZ8OgeSDEkcSDbmcga8O9IG3GsOG7o24gaOG6v3QgaGnhu4d1IGzhu7FjIHBo4bqjaSBs4bubbiBoxqFuIG5nw6B5IGhp4buHbiB04bqhaSE7bGJMYWJlbDtpPDI+Oz4+Oz47Oz47dDxwPHA8bDxUZXh0O0Nzc0NsYXNzO18hU0I7PjtsPEtodcO0biBk4bqhbmcgbmfDoHkgdGjDoW5nIGtow7RuZyBo4bujcCBs4buHO2xiTGFiZWw7aTwyPjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCOz47bDzEkMSDbmcga8O9IGPDoSBiaeG7h3Qga2jDtG5nIGjhu6NwIGzhu4chO2xiTGFiZWw7aTwyPjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCOz47bDxWxrDhu6N0IHF1w6Egc+G7kSBsxrDhu6NuZyDEkcaw4bujYyDEkeG6t3QhO2xiTGFiZWw7aTwyPjs+Pjs+Ozs+O3Q8cDxsPFZpc2libGU7PjtsPG88Zj47Pj47bDxpPDA+Oz47bDx0PDtsPGk8MD47PjtsPHQ8cDxwPGw8VmlzaWJsZTs+O2w8bzxmPjs+Pjs+Ozs+Oz4+Oz4+O3Q8QDA8cDxwPGw8Q3NzQ2xhc3M7XyFTQjtWaXNpYmxlOz47bDxsYkdyaWQ7aTwyPjtvPGY+Oz4+Oz47QDA8QDA8cDxsPEhlYWRlclRleHQ7PjtsPExvZ287Pj47Ozs7PjtAMDxwPGw8SGVhZGVyVGV4dDs+O2w8TElOSzs+Pjs7Ozs+Oz47cDxsPENzc0NsYXNzO18hU0I7PjtsPGxiR3JpZFBhZ2VyO2k8Mj47Pj47cDxsPENzc0NsYXNzO18hU0I7PjtsPGxiR3JpZEhlYWRlcjtpPDI+Oz4+OztwPGw8Q3NzQ2xhc3M7XyFTQjs+O2w8bGJHcmlkQ2VsbDtpPDI+Oz4+O3A8bDxDc3NDbGFzcztfIVNCOz47bDxsYkdyaWRBbHRlckNlbGw7aTwyPjs+Pjs7cDxsPENzc0NsYXNzO18hU0I7PjtsPGxiR3JpZEVkaXQ7aTwyPjs+Pjs7Pjs7Pjt0PHA8bDxWaXNpYmxlOz47bDxvPGY+Oz4+O2w8aTwwPjs+O2w8dDw7bDxpPDA+Oz47bDx0PHA8cDxsPFZpc2libGU7PjtsPG88Zj47Pj47Pjs7Pjs+Pjs+Pjt0PEAwPHA8cDxsPENzc0NsYXNzO18hU0I7VmlzaWJsZTs+O2w8bGJHcmlkO2k8Mj47bzxmPjs+Pjs+O0AwPEAwPHA8bDxIZWFkZXJUZXh0Oz47bDxcZTs+Pjs7Ozs+O0AwPHA8bDxIZWFkZXJUZXh0Oz47bDxcZTs+Pjs7Ozs+O0AwPHA8bDxIZWFkZXJUZXh0Oz47bDxOaGFuIMSR4buBIOG6pW4gcGjhuqltOz4+Ozs7Oz47QDA8cDxsPEhlYWRlclRleHQ7PjtsPEtodcO0biBk4bqhbmcgLyBLw61jaCB0aMaw4bubYzs+Pjs7Ozs+O0AwPHA8bDxIZWFkZXJUZXh0Oz47bDxHaGkgY2jDujs+Pjs7Ozs+O0AwPHA8bDxIZWFkZXJUZXh0Oz47bDxHacOhIHRp4buBbjs+Pjs7Ozs+O0AwPHA8bDxIZWFkZXJUZXh0Oz47bDxcZTs+Pjs7Ozs+O0AwPHA8bDxIZWFkZXJUZXh0Oz47bDxcZTs+Pjs7Ozs+O0AwPHA8bDxIZWFkZXJUZXh0Oz47bDxcZTs+Pjs7Ozs+O0AwPHA8bDxIZWFkZXJUZXh0Oz47bDxcZTs+Pjs7Ozs+O0AwPHA8bDxIZWFkZXJUZXh0Oz47bDxcZTs+Pjs7Ozs+Oz47cDxsPENzc0NsYXNzO18hU0I7PjtsPGxiR3JpZFBhZ2VyO2k8Mj47Pj47cDxsPENzc0NsYXNzO18hU0I7PjtsPGxiR3JpZEhlYWRlcjtpPDI+Oz4+OztwPGw8Q3NzQ2xhc3M7XyFTQjs+O2w8bGJHcmlkQ2VsbDtpPDI+Oz4+O3A8bDxDc3NDbGFzcztfIVNCOz47bDxsYkdyaWRBbHRlckNlbGw7aTwyPjs+Pjs7cDxsPENzc0NsYXNzO18hU0I7PjtsPGxiR3JpZEVkaXQ7aTwyPjs+Pjs7Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7XyFTQjtWaXNpYmxlOz47bDxDaOG7jW4gbXVhO2xiQnV0dG9uO2k8Mj47bzxmPjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCO1Zpc2libGU7PjtsPFhlbSDEkcOjIGNo4buNbjtsYkJ1dHRvbjtpPDI+O288Zj47Pj47Pjs7Pjt0PHA8bDxWaXNpYmxlOz47bDxvPGY+Oz4+O2w8aTwwPjs+O2w8dDw7bDxpPDA+Oz47bDx0PHA8cDxsPFZpc2libGU7PjtsPG88Zj47Pj47Pjs7Pjs+Pjs+Pjt0PEAwPHA8cDxsPENzc0NsYXNzO18hU0I7VmlzaWJsZTs+O2w8bGJHcmlkO2k8Mj47bzxmPjs+Pjs+O0AwPEAwPHA8bDxIZWFkZXJUZXh0Oz47bDxCw6BpIHRyw61jaDs+Pjs7Ozs+Oz47cDxsPENzc0NsYXNzO18hU0I7PjtsPGxiR3JpZFBhZ2VyO2k8Mj47Pj47cDxsPENzc0NsYXNzO18hU0I7PjtsPGxiR3JpZEhlYWRlcjtpPDI+Oz4+OztwPGw8Q3NzQ2xhc3M7XyFTQjs+O2w8bGJHcmlkQ2VsbDtpPDI+Oz4+O3A8bDxDc3NDbGFzcztfIVNCOz47bDxsYkdyaWRBbHRlckNlbGw7aTwyPjs+Pjs7cDxsPENzc0NsYXNzO18hU0I7PjtsPGxiR3JpZEVkaXQ7aTwyPjs+Pjs7Pjs7Pjt0PHA8cDxsPENzc0NsYXNzO1RleHQ7XyFTQjs+O2w8bGJMYWJlbDtcPExJXD5cPEJcPlTDoWMgZ2nhuqNcPC9CXD46IFw8QSAgY2xhc3M9ImxiTGlua0Z1bmN0aW9uIiBocmVmPSJXU2hvd3Jlc3VsdC5hc3B4P0F1dGhvcj1Tb21tZXJ2aWxsZSBJYW4iXD5Tb21tZXJ2aWxsZSBJYW5cPC9BXD5cPEJSXD47aTwyPjs+Pjs+Ozs+O3Q8cDxwPGw8Q3NzQ2xhc3M7VGV4dDtfIVNCO1Zpc2libGU7PjtsPGxiTGFiZWw7O2k8Mj47bzxmPjs+Pjs+Ozs+O3Q8cDxwPGw8Q3NzQ2xhc3M7VGV4dDtfIVNCO1Zpc2libGU7PjtsPGxiTGFiZWw7O2k8Mj47bzxmPjs+Pjs+Ozs+O3Q8cDxwPGw8Q3NzQ2xhc3M7VGV4dDtfIVNCOz47bDxsYkxhYmVsO1w8TElcPlw8Qlw+RERDXDwvQlw+OiBcPEEgIGNsYXNzPSJsYkxpbmtGdW5jdGlvbiIgaHJlZj0iV1Nob3dyZXN1bHQuYXNweD9leGFjdD0xJkREQz0wMDUgMSJcPjAwNS4xXDwvQVw+XDxCUlw+O2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPENzc0NsYXNzO1RleHQ7XyFTQjtWaXNpYmxlOz47bDxsYkxhYmVsOztpPDI+O288Zj47Pj47Pjs7Pjt0PHA8cDxsPENzc0NsYXNzO1RleHQ7XyFTQjs+O2w8bGJMYWJlbDtcPExJXD5cPEJcPlThu6sga2hvw6FcPC9CXD46IFw8QSAgY2xhc3M9ImxiTGlua0Z1bmN0aW9uIiBocmVmPSJXU2hvd3Jlc3VsdC5hc3B4P0tleVdvcmQ9U29mdHdhcmUgZW5naW5lZXJpbmciXD5Tb2Z0d2FyZSBlbmdpbmVlcmluZ1w8L0FcPlw8QlJcPjtpPDI+Oz4+Oz47Oz47dDxwPHA8bDxDc3NDbGFzcztUZXh0O18hU0I7PjtsPGxiTGFiZWw7XDxMSVw+XDxCXD5UacOqdSDEkeG7gSDEkeG7gSBt4bulY1w8L0JcPjogXDxBICBjbGFzcz0ibGJMaW5rRnVuY3Rpb24iIGhyZWY9IldTaG93cmVzdWx0LmFzcHg/U3ViamVjdEhlYWRpbmc9U1dFMTAxIlw+U1dFMTAxXDwvQVw+LCBcPEEgIGNsYXNzPSJsYkxpbmtGdW5jdGlvbiIgaHJlZj0iV1Nob3dyZXN1bHQuYXNweD9TdWJqZWN0SGVhZGluZz1OaOG6rXAgbcO0biBr4bu5IHRodeG6rXQgcGjhuqduIG3hu4FtIlw+Tmjhuq1wIG3DtG4ga+G7uSB0aHXhuq10IHBo4bqnbiBt4buBbVw8L0FcPiwgXDxBICBjbGFzcz0ibGJMaW5rRnVuY3Rpb24iIGhyZWY9IldTaG93cmVzdWx0LmFzcHg/U3ViamVjdEhlYWRpbmc9SW50cm9kdWN0aW9uIHRvIHNvZnR3YXJlIGVuZ2luZWVyaW5nIlw+SW50cm9kdWN0aW9uIHRvIHNvZnR3YXJlIGVuZ2luZWVyaW5nXDwvQVw+LCBcPEEgIGNsYXNzPSJsYkxpbmtGdW5jdGlvbiIgaHJlZj0iV1Nob3dyZXN1bHQuYXNweD9TdWJqZWN0SGVhZGluZz1TV0UxMDIiXD5TV0UxMDJcPC9BXD5cPEJSXD4gO2k8Mj47Pj47Pjs7Pjt0PEAwPHA8cDxsPF8hU0I7Q3NzQ2xhc3M7UGFnZUNvdW50O18hSXRlbUNvdW50O18hRGF0YVNvdXJjZUl0ZW1Db3VudDtEYXRhS2V5czs+O2w8aTwyPjtsYkdyaWQ7aTwxPjtpPDM+O2k8Mz47bDw+Oz4+Oz47QDA8QDA8cDxsPEhlYWRlclRleHQ7PjtsPE5o4buvbmcgxJHhu5ljIGdp4bqjIG3GsOG7o24g4bqlbiBwaOG6qW0gbsOgeSBjxaluZyBtxrDhu6NuOz4+Ozs7Oz47PjtwPGw8Q3NzQ2xhc3M7XyFTQjs+O2w8bGJHcmlkUGFnZXI7aTwyPjs+PjtwPGw8Q3NzQ2xhc3M7XyFTQjs+O2w8bGJHcmlkSGVhZGVyO2k8Mj47Pj47O3A8bDxDc3NDbGFzcztfIVNCOz47bDxsYkdyaWRDZWxsO2k8Mj47Pj47cDxsPENzc0NsYXNzO18hU0I7PjtsPGxiR3JpZEFsdGVyQ2VsbDtpPDI+Oz4+OztwPGw8Q3NzQ2xhc3M7XyFTQjs+O2w8bGJHcmlkRWRpdDtpPDI+Oz4+Ozs+O2w8aTwwPjs+O2w8dDw7bDxpPDE+O2k8Mj47aTwzPjs+O2w8dDw7bDxpPDA+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPFw8YSBocmVmPSdXU2hvd0RldGFpbC5hc3B4P2ludEl0ZW1JRD01MTYnIGNsYXNzPSdsYmxpbmtmdW5jdGlvbidcPiBGb3VuZGF0aW9ucyBvZiBwcm9ncmFtbWluZyB1c2luZyBDOiBMxrB1IGjDoG5oIG7hu5lpIGLhu5kvIEV2YW4sIFdlYXZlclw8L2FcPjs+Pjs+Ozs+Oz4+O3Q8O2w8aTwwPjs+O2w8dDxwPHA8bDxUZXh0Oz47bDxcPGEgaHJlZj0nV1Nob3dEZXRhaWwuYXNweD9pbnRJdGVtSUQ9ODM3MicgY2xhc3M9J2xibGlua2Z1bmN0aW9uJ1w+IOOBp+OBjeOCi+aXpeacrOiqni4g5Yid57Sa5pys5YaKID0gRGVraXJ1IE5paG9uZ28gLSBCZWdpbm5lciBMZXZlbCAoYsOsYSDEkeG7jykgOiBUZXh0Ym9vayA9IERla2lydSBOaWhvbmdvLiBTaG9reXXMhCBob25zYXRzdSAvIEthenVrbyBTaGltYWRhXDwvYVw+Oz4+Oz47Oz47Pj47dDw7bDxpPDA+Oz47bDx0PHA8cDxsPFRleHQ7PjtsPFw8YSBocmVmPSdXU2hvd0RldGFpbC5hc3B4P2ludEl0ZW1JRD05MTYxJyBjbGFzcz0nbGJsaW5rZnVuY3Rpb24nXD4gQ29tcHV0ZXIgb3JnYW5pemF0aW9uIGFuZCBhcmNoaXRlY3R1cmUgOiBkZXNpZ25pbmcgZm9yIHBlcmZvcm1hbmNlIC8gV2lsbGlhbSBTdGFsbGluZ3NcOyBQZXRlciBaZW5vXDwvYVw+Oz4+Oz47Oz47Pj47Pj47Pj47dDxwPGw8VmlzaWJsZTs+O2w8bzxmPjs+PjtsPGk8MD47PjtsPHQ8O2w8aTwyPjs+O2w8dDxwPHA8bDxOYXZpZ2F0ZVVybDs+O2w8amF2YXNjcmlwdDpPcGVuV2luZG93KCdXU2VyaWFsVmlldy5hc3B4P2ludEl0ZW1JRD05ODgwJywnV1NlcmlhbFZpZXcnLDcwMCw0MDAsMTAwLDEwMCk7Pj47Pjs7Pjs+Pjs+Pjt0PHA8cDxsPENzc0NsYXNzO1RleHQ7XyFTQjs+O2w8bGJMYWJlbDs7aTwyPjs+Pjs+Ozs+O3Q8O2w8aTwwPjs+O2w8dDw7bDxpPDA+Oz47bDx0PHA8cDxsPENzc0NsYXNzO05hdmlnYXRlVXJsO18hU0I7PjtsPGxiR3JvdXBUaXRsZTtXQ29tbWVudC5hc3B4P2ludEl0ZW1JRD05ODgwO2k8Mj47Pj47Pjs7Pjs+Pjs+Pjt0PEAwPHA8cDxsPENzc0NsYXNzO18hU0I7VmlzaWJsZTs+O2w8bGJHcmlkO2k8Mj47bzxmPjs+Pjs+O0AwPEAwPHA8bDxIZWFkZXJUZXh0Oz47bDxN4bupYzs+Pjs7Ozs+O0AwPHA8bDxIZWFkZXJUZXh0Oz47bDxUacOqdSDEkeG7gTs+Pjs7Ozs+O0AwPHA8bDxIZWFkZXJUZXh0Oz47bDxO4buZaSBkdW5nOz4+Ozs7Oz47QDA8cDxsPEhlYWRlclRleHQ7PjtsPEjhu40gdMOqbi8gU+G7kSB0aOG6uzs+Pjs7Ozs+O0AwPHA8bDxIZWFkZXJUZXh0Oz47bDxOZ8OgeTs+Pjs7Ozs+O0AwPHA8bDxIZWFkZXJUZXh0Oz47bDxFLU1haWw7Pj47Ozs7Pjs+O3A8bDxDc3NDbGFzcztfIVNCOz47bDxsYkdyaWRQYWdlcjtpPDI+Oz4+O3A8bDxDc3NDbGFzcztfIVNCOz47bDxsYkdyaWRIZWFkZXI7aTwyPjs+Pjs7cDxsPENzc0NsYXNzO18hU0I7PjtsPGxiR3JpZENlbGw7aTwyPjs+PjtwPGw8Q3NzQ2xhc3M7XyFTQjs+O2w8bGJHcmlkQWx0ZXJDZWxsO2k8Mj47Pj47O3A8bDxDc3NDbGFzcztfIVNCOz47bDxsYkdyaWRFZGl0O2k8Mj47Pj47Oz47Oz47dDxwPGw8VmlzaWJsZTs+O2w8bzxmPjs+PjtsPGk8MD47PjtsPHQ8O2w8aTwwPjs+O2w8dDxwPHA8bDxWaXNpYmxlOz47bDxvPGY+Oz4+Oz47Oz47Pj47Pj47dDxwPHA8bDxDc3NDbGFzcztUZXh0O18hU0I7PjtsPGxiTGFiZWw7O2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7XyFTQjs+O2w8VHIuO2xiTGFiZWw7aTwyPjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCOz47bDxUw6FjIGdp4bqjO2xiTGFiZWw7aTwyPjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCOz47bDxCQks7bGJMYWJlbDtpPDI+Oz4+Oz47Oz47dDxwPHA8bDxUZXh0O0Nzc0NsYXNzO18hU0I7PjtsPFVEQztsYkxhYmVsO2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7XyFTQjs+O2w8RERDO2xiTGFiZWw7aTwyPjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCOz47bDzEkOG7gSBt4bulYyBxdeG7kWMgZ2lhO2xiTGFiZWw7aTwyPjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCOz47bDxU4burIGtob8OhO2xiTGFiZWw7aTwyPjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCOz47bDxUacOqdSDEkeG7gSDEkeG7gSBt4bulYztsYkxhYmVsO2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7XyFTQjs+O2w8UXXDoSBnaeG7m2kgaOG6oW4gZG93bmxvYWQgITtsYkxhYmVsO2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7XyFTQjs+O2w8S2jDtG5nIGPDsyB0aMO0bmcgdGluIGLhu5Ugc3VuZztsYkxhYmVsO2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7XyFTQjs+O2w8UuG7l2k7bGJMYWJlbDtpPDI+Oz4+Oz47Oz47dDxwPHA8bDxUZXh0O0Nzc0NsYXNzO18hU0I7PjtsPFThu5VuZztsYkxhYmVsO2k8Mj47Pj47Pjs7Pjt0PHA8cDxsPFRleHQ7Q3NzQ2xhc3M7XyFTQjs+O2w8a2jDs2E7bGJMYWJlbDtpPDI+Oz4+Oz47Oz47dDxwPHA8bDxUZXh0O0Nzc0NsYXNzO18hU0I7PjtsPELhuq1uO2xiTGFiZWw7aTwyPjs+Pjs+Ozs+O3Q8cDxwPGw8VGV4dDtDc3NDbGFzcztfIVNCOz47bDxTxqEgxJHhu5M7bGJMYWJlbDtpPDI+Oz4+Oz47Oz47dDx0PHA8cDxsPEFjY2Vzc0tleTs+O2w8XGU7Pj47Pjt0PGk8Nz47QDxMQyBDb250cm9sIE51bWJlcjo7ROG6oW5nIHTDoGkgbGnhu4d1OjtUaMO0bmcgdGluIG3DtCB04bqjOjtDYWxsIE51bWJlcjo7UGjhu6UgY2jDujo7U8OhY2g7WHXhuqV0IGLhuqNuIOG6pW4gcGjhuqltIG5oaeG7gXUga+G7szs+O0A8MDsxOzI7Mzs0OzU7Njs+PjtsPGk8MD47Pj47Oz47dDx0PHA8cDxsPEFjY2Vzc0tleTs+O2w8XGU7Pj47Pjt0PGk8MjA+O0A8TG/huqFpIHTDoGkgbGnhu4d1O0No4buJIHPhu5EgSVNCTjtDaOG7iSBz4buRIElTU047TcOjIG5nw7RuIG5n4buvO1Bow6JuIGxv4bqhaSB0aOG6rXAgcGjDom4gYsOhY2gga2hvYTtQaMOibiBsb+G6oWkgdGjhuq1wIHBow6JuIERld2V5O1Bow6JuIGxv4bqhaSBraMOhYztUw6puIHTDoWMgZ2nhuqM7VMOhYyBnaeG6oyB04bqtcCB0aOG7gztUw6FjIGdp4bqjIGxpw6puIHF1YW47VGjDtG5nIHRpbiBuaGFuIMSR4buBO1h14bqpdCBi4bqjbixwaMOhdCBow6BuaDtNw7QgdOG6oyB24bqtdCBsw707VGjDtG5nIHRpbiB0w7luZyB0aMawO1TDs20gdOG6r3QvY2jDuiBnaeG6o2k7S8O9IGhp4buHdSBraG87xJDhu4thIGNo4buJIMSRaeG7h24gdOG7rSB2w6AgdHJ1eSBj4bqtcDtU4burIGtow7NhO1PDoWNoO1h14bqldCBi4bqjbiDhuqVuIHBo4bqpbSBuaGnhu4F1IGvhu7M7PjtAPDA7MTsyOzM7NDs1OzY7Nzs4Ozk7MTA7MTE7MTI7MTM7MTQ7MTU7MTY7MTc7MTg7MTk7Pj47bDxpPDA+Oz4+Ozs+Oz4+Oz4+O2w8aW1nQ29tbWVudDs+PsDVmSXNzcaNDkCu7MKaNRi7vfzo" />
+	<Script Language='JavaScript'  type='text/javascript' src='/Opac/Common/vietuni.js'></Script>
+
+	<Script language='JavaScript'>Typing=0;FontType='utf8';</Script>
+
+	<script language = 'javascript' src = 'Common/LibolCommon.js'></script>
+
+	<script language = 'javascript' src = 'js/WShowdetail.js'></script>
+
+	<script language='javascript'>var language = 'vie';var imgDir='Common/Calendar/'</script>
+
+	<script language='javascript' src='Common/Calendar/PopCalendar1.js'></script>
+
+
+			<table width="100%" border="0">
+				<TR>
+					<TD align="center">
+						<input type="submit" name="btnBriefRecord" value="Hiển thị đơn giản" id="btnBriefRecord" class="lbButton" />
+						<input type="submit" name="btnISBD" value="Hiển thị ISBD" id="btnISBD" class="lbButton" />
+						<input type="submit" name="btnFullRecord" value="Hiển thị đầy đủ" id="btnFullRecord" class="lbButton" />
+						<input type="submit" name="btnMARC" value="Hiển thị MARC" id="btnMARC" class="lbButton" />
+						
+						&nbsp;&nbsp;
+						
+						&nbsp;
+						
+						</TD>
+				</TR>
+				<TR class="lbPageTitle">
+					<TD><span id="lblCataData" class="lbPageTitle">Dữ liệu biên mục</span></TD>
+				</TR>
+				<tr>
+					<td><span id="lblRecInfor" class="lbLabel"><TABLE WIDTH=100% BORDER = 0 class='lbLabel'><TR VALIGN='Top'><TD WIDTH='150px'><B> Dạng tài liệu:</B></TD><TD>Tư liệu ngôn ngữ (Sách)</TD></TR><TR VALIGN='Top'><TD WIDTH='150px'><B>Thông tin mô tả:</B></TD> <TD><B> Sommerville, Ian</B><BR> Software engineering / Ian Sommerville<BR> Harlow ; Singapore : Pearson, 2016<BR> 810 pages : illustrations (some color) ; 24 cm</B><BR><TR><TD>Call Number:</TD> <TD> 005.1 S697 </TD></TR></TABLE></span></td>
+				</tr>
+				<tr id="trHolding" class="lbPageTitle">
+	<TD class="lbPageTitle"><span id="lblCapHolding"> Thông tin ĐKCB</span>&nbsp;&nbsp;&nbsp; 
+						&nbsp;
+						<a id="lnkHoldingInfor" class="lbShowDetail" href="javascript:OpenWindow('WHoldingCollection.aspx?intItemID=9880','HoldingInfor',600,350,100,100)"> Chi tiết</a></TD>
+</tr>
+
+				<TR>
+					<TD>
+						<table width="100%" border="0">
+							<tr>
+								<td vAlign="top" width="50%">
+									<table width="100%" border="0">
+										<tr>
+											<td><span id="lblCoverPic" class="lbLabel"></span></td>
+										</tr>
+										<tr>
+											<td><span id="lblHoldingInfor" class="lbLabel"><B>FSE-HL: GT/TTHL</B> [ Rỗi ] &nbsp;Tổng: 10;&nbsp;Rỗi: 5;&nbsp;Bận: 5&nbsp;<A HREF=Javascript:OpenWindow('WLocationDiagram.aspx?intItemID=9880&intLocID=95&x=5884101698&strShelf=A,B,C','LocationDiagram',700,400,100,100,'yes') class='lbLinkFunction'>Sơ đồ</A><BR>GT/TTHL001320-9<BR><B>FUDN: GT/DNCN</B> [ Rỗi ] &nbsp;Tổng: 91;&nbsp;Rỗi: 36;&nbsp;Bận: 55&nbsp;<A HREF=Javascript:OpenWindow('WLocationDiagram.aspx?intItemID=9880&intLocID=59&x=8035174782&strShelf=A,B,C','LocationDiagram',700,400,100,100,'yes') class='lbLinkFunction'>Sơ đồ</A><BR>KĐ:GT/DNCN001279-320, GT/DNCN001457-75, GT/DNCN001816-21, GT/DNCN002065-83<BR>KM:GT/DNCN001321-5<BR></span></td>
+										</tr>
+										<!--<tr>
+											<td><span id="lblSerialHolding" class="lbLabel"></span></td>
+										</tr>-->
+										<tr>
+											<td><span id="lblSumItems" class="lbLabel">Tổng số bản:</span>&nbsp;<span id="lblValSumItems" class="lbLabel"><b>101</b></span>
+											</td>
+										</tr>
+										<tr>
+											<td><span id="lblSumFree" class="lbLabel">Số bản rỗi:</span>&nbsp;<span id="lblVallblSumFree" class="lbLabel"><b>41</b></span>&nbsp;<span id="lblSumFeeAll" class="lbLabel">(kể cả các bản được giữ chỗ)</span>
+											</td>
+										</tr>
+										<tr>
+											<td><span id="lblSumOnHold" class="lbLabel">Số bản được giữ chỗ:</span>&nbsp;<span id="lblValSumOnHold" class="lbLabel"><b>0</b></span>
+											</td>
+										</tr>
+									</table>
+								</td>
+								<td vAlign="top">
+									<table width="100%" border="0">
+										<TR>
+											<TD align="center" colSpan="2">&nbsp;
+												&nbsp;
+												&nbsp;&nbsp;
+											</TD>
+										</TR>
+										<TR>
+											<TD align="center" colSpan="2">&nbsp;
+												</TD>
+										</TR>
+										<tr>
+											<td align="right" width="40%" style="HEIGHT: 26px"><span id="lblCardNo" class="lbLabel"><u>S</u>ố thẻ:</span></td>
+											<td style="HEIGHT: 26px"><input name="txtCardNo" type="text" maxlength="20" id="txtCardNo" accesskey="S" class="lbTextBox" />&nbsp;&nbsp;&nbsp;&nbsp;</td>
+										</tr>
+										<tr>
+											<td align="right"><span id="lblPassWord" class="lbLabel">Mật <u>k</u>hẩu:</span></td>
+											<td><input name="txtPassWord" type="password" maxlength="20" id="txtPassWord" accesskey="K" class="lbTextBox" /></td>
+										</tr>
+										<tr>
+											<td align="right"><span id="lblCopyNum" class="lbLabel"><u>Đ</u>KCB:</span></td>
+											<td><input name="txtCopyNumber" type="text" maxlength="32" id="txtCopyNumber" accesskey="D" class="lbTextBox" /></td>
+										</tr>
+										<TR>
+											<TD align="right" colSpan="2"><span id="lblNote" class="lbLabel">(Chỉ nhập khi muốn yêu cầu một ĐKCB cụ thể)</span></TD>
+										</TR>
+										<TR>
+											<TD align="right"><span id="lblValidDate" class="lbLabel">Hiệu lực tới <u>n</u>gày:</span></TD>
+											<td><input name="txtValidDate" type="text" id="txtValidDate" accesskey="N" class="lbTextBox" />&nbsp;<a id="lnkCal" class="lbLinkFunction" onClick="popUpCalendar(this, document.forms[0].txtValidDate, 'dd/mm/yyyy',26)" href="#">Lịch</a></td>
+										</TR>
+										<TR>
+											<TD align="right"></TD>
+											<TD><input type="submit" name="btnReser" value="Đăng ký mượn(u)" id="btnReser" accesskey="U" class="lbButton" Onclick="return ValidInput('Chưa nhập đủ thông tin thẻ','Khuôn dạng ngày tháng không hợp lệ','dd/mm/yyyy','Ngày đăng ký mượn hết hiệu lực phải lớn hơn ngày hiện tại!','17/08/2020')" /></TD>
+										</TR>
+										<TR>
+											<TD colSpan="2"><input name="txtHidReq" id="txtHidReq" type="hidden" style="WIDTH: 48px; HEIGHT: 22px" size="2" value="reservation" />
+												
+												</TD>
+											
+										</TR>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</TD>
+				</TR>
+				
+				<TR>
+					<TD></TD>
+				</TR>
+				
+				<TR>
+					<TD>&nbsp;
+						</TD>
+				</TR>
+				
+				<TR>
+					<TD></TD>
+				</TR>
+				<tr id="trAccesEntry" class="lbPageTitle">
+	<TD><span id="lblCapAccesEntry" class="lbPageTitle">Mục từ truy cập</span></TD>
+</tr>
+
+				<TR>
+					<TD>
+						<ul>
+							<span id="lblAuthor" class="lbLabel"><LI><B>Tác giả</B>: <A  class="lbLinkFunction" href="WShowresult.aspx?Author=Sommerville Ian">Sommerville Ian</A><BR></span><span id="lblDDC" class="lbLabel"><LI><B>DDC</B>: <A  class="lbLinkFunction" href="WShowresult.aspx?exact=1&DDC=005 1">005.1</A><BR></span><span id="lblKeyWord" class="lbLabel"><LI><B>Từ khoá</B>: <A  class="lbLinkFunction" href="WShowresult.aspx?KeyWord=Software engineering">Software engineering</A><BR></span><span id="lblSH" class="lbLabel"><LI><B>Tiêu đề đề mục</B>: <A  class="lbLinkFunction" href="WShowresult.aspx?SubjectHeading=SWE101">SWE101</A>, <A  class="lbLinkFunction" href="WShowresult.aspx?SubjectHeading=Nhập môn kỹ thuật phần mềm">Nhập môn kỹ thuật phần mềm</A>, <A  class="lbLinkFunction" href="WShowresult.aspx?SubjectHeading=Introduction to software engineering">Introduction to software engineering</A>, <A  class="lbLinkFunction" href="WShowresult.aspx?SubjectHeading=SWE102">SWE102</A><BR> </span></ul>
+					</TD>
+				</TR>
+				<TR>
+					<TD><table class="lbGrid" cellspacing="0" rules="all" border="1" id="dtgRelationBook" width="100%">
+	<tr class="lbGridHeader">
+		<td align="Left">Những độc giả mượn ấn phẩm này cũng mượn</td>
+	</tr><tr class="lbGridCell">
+		<td><a href='WShowDetail.aspx?intItemID=516' class='lblinkfunction'> Foundations of programming using C: Lưu hành nội bộ/ Evan, Weaver</a></td>
+	</tr><tr class="lbGridAlterCell">
+		<td><a href='WShowDetail.aspx?intItemID=8372' class='lblinkfunction'> できる日本語. 初級本冊 = Dekiru Nihongo - Beginner Level (bìa đỏ) : Textbook = Dekiru Nihongo. Shokyū honsatsu / Kazuko Shimada</a></td>
+	</tr><tr class="lbGridCell">
+		<td><a href='WShowDetail.aspx?intItemID=9161' class='lblinkfunction'> Computer organization and architecture : designing for performance / William Stallings; Peter Zeno</a></td>
+	</tr>
+</table></TD>
+				</TR>
+				
+				<tr>
+					<td>&nbsp;&nbsp;<span id="lblDetail" class="lbLabel"></span></td>
+				</tr>
+				<tr id="trComment" class="lbPageTitle">
+	<TD class="lbPageTitle"><a id="lnkComment" class="lbGroupTitle" href="WComment.aspx?intItemID=9880">Bình phẩm, bình luận</a>&nbsp;
+						<input type="image" name="imgComment" id="imgComment" src="images\post_com.gif" alt="" border="0" /></TD>
+</tr>
+
+				<TR>
+					<TD></TD>
+				</TR>
+				
+				<TR>
+					<TD><span id="lblRelationTitles" class="lbLabel"></span></TD>
+				</TR>
+				<TR>
+					<TD><input name="hidRecordNum" id="hidRecordNum" type="hidden" value="0" />
+						<input name="hidItemID" id="hidItemID" type="hidden" />
+						</TD>
+					
+					</TD>
+				</TR>
+				
+				
+			</table>
+		</form>
+	</body>
+</HTML>

@@ -18,7 +18,7 @@ public class HomeController {
 		return "index.html";
 	}
 
-	@RequestMapping("test")
+	@RequestMapping("db")
 	public String test() {
 		scrawler.run();
 		return "success";

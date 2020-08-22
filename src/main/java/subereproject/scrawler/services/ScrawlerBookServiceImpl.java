@@ -10,6 +10,7 @@ import java.util.regex.Matcher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import subereproject.scrawler.models.Book;
+import subereproject.scrawler.models.BookCopies;
 import subereproject.scrawler.models.PageList;
 import subereproject.scrawler.util.BooksIDUtil;
 
@@ -18,9 +19,11 @@ public class ScrawlerBookServiceImpl implements ScrawlerBookService {
 
 	@Autowired
 	private BookService bookService;
+	
+	@Autowired
+	private CopiesService copiesService;
 
-	@Override
-	public String getContentFrom(String link) {
+	private String getContentFrom(String link) {
 		URL url;
 		try {
 			url = new URL(link);
@@ -35,10 +38,7 @@ public class ScrawlerBookServiceImpl implements ScrawlerBookService {
 		}
 	}
 
-	@Override
-	public Book scan(int id) {
-		String content = getContentFrom(new PageList().getPage(2).getUrl() + id);
-
+	private void getDetails(String content, int id) {
 		try {
 			if (content != null) {
 				Matcher mState = pState.matcher(content);
@@ -61,14 +61,40 @@ public class ScrawlerBookServiceImpl implements ScrawlerBookService {
 					Book book = new Book(id, title, author, type, publisher, no, available, total, status);
 					System.out.println(book.getId());
 					bookService.save(book);
-					return book;
+					String contentCopy = getContentFrom(new PageList().getPage(3).getUrl() + id);
+					getCollection(contentCopy, book);
+				}
+			}
+		} catch (Exception ex) {
+			System.out.println("Error" + ex);
+		}
+
+	}
+
+	private void getCollection(String content, Book book) {
+		try {
+			if (content != null) {
+				Matcher mDetail = pDetail.matcher(content);
+				while (mDetail.find()) {
+
+					String store = mDetail.group(1);
+					String code = mDetail.group(2);
+					String status = mDetail.group(3);
+					BookCopies copy = new BookCopies(code, status, store, book);
+					copiesService.save(copy);
 				}
 			}
 
 		} catch (Exception ex) {
-			return null;
+			System.out.println("Error" + ex);
 		}
-		return null;
+
+	}
+
+	private void scan(int id) {
+		String contentBook = getContentFrom(new PageList().getPage(2).getUrl() + id);
+		getDetails(contentBook, id);
+
 	}
 
 	@Override

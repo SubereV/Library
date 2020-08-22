@@ -1,9 +1,12 @@
 package subereproject.scrawler.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
 
 import org.hibernate.annotations.Nationalized;
 
@@ -27,6 +30,8 @@ public class Book {
 	private int total;
 	@Nationalized
 	private String status;
+	@OneToMany(mappedBy = "book", fetch = FetchType.EAGER)
+	private List<BookCopies> copies;
 
 	public Book() {
 		// TODO Auto-generated constructor stub
@@ -116,6 +121,14 @@ public class Book {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public List<BookCopies> getCopies() {
+		return copies;
+	}
+
+	public void setCopies(List<BookCopies> copies) {
+		this.copies = copies;
 	}
 
 	@Override

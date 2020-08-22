@@ -11,7 +11,7 @@ public class PageList {
 		pages.add(new Page("home", "http://libol.fpt.edu.vn/opac/"));
 		pages.add(new Page("login", "http://libol.fpt.edu.vn/opac/WPersonalPageLogin.aspx"));
 		pages.add(new Page("store", "http://libol.fpt.edu.vn/opac/WShowDetail.aspx?intItemID="));
-		pages.add(new Page("bStatus", "http://libol.fpt.edu.vn/opac/WHoldingCollection.aspx?intItemID="));
+		pages.add(new Page("books", "http://libol.fpt.edu.vn/opac/WHoldingCollection.aspx?intItemID="));
 	}
 	
 	public Page getPage(int index) {

@@ -34,7 +34,6 @@ public class Book {
 	private List<BookCopies> copies;
 
 	public Book() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Book(int id, String title, String author, String type, String publisher, String no, int available, int total,

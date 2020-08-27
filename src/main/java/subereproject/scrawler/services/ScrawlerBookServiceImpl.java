@@ -19,7 +19,8 @@ public class ScrawlerBookServiceImpl implements ScrawlerBookService {
 
 	@Autowired
 	private BookService bookService;
-	
+	@Autowired
+	private CategoryService CategoryService;
 	@Autowired
 	private CopiesService copiesService;
 

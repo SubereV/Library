@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import subereproject.scrawler.models.BookCopies;
 
 @Repository
-public interface CopiesRepository extends CrudRepository<BookCopies, String> {
+public interface CopiesRepository extends CrudRepository<BookCopies, String> , CustomizedCopiesRepository{
 
 }

@@ -767,12 +767,12 @@ ol {
 	left: 0;
 	width: 100%;
 	padding: 0 20px;
-	bottom: 20px;
+	bottom: 10px;
 	text-align: center;
 }
 
 .categories__item h5 a {
-	font-size: 18px;
+	font-size: 11px;
 	color: #1c1c1c;
 	font-weight: 700;
 	text-transform: uppercase;

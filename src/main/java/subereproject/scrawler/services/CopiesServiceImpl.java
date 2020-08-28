@@ -6,12 +6,16 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import subereproject.scrawler.models.Book;
 import subereproject.scrawler.models.BookCopies;
 import subereproject.scrawler.repositories.CopiesRepository;
 
 @Service
 public class CopiesServiceImpl implements CopiesService{
-	
+	public List<Integer> findTop7MostBorrowedBookId() {
+		return copiesRepository.findTop7MostBorrowedBookId();
+	}
+
 	@Autowired
 	private CopiesRepository copiesRepository;
 

@@ -5,8 +5,9 @@ import java.util.Optional;
 
 import subereproject.scrawler.models.BookCopies;
 
-public interface CopiesService {
 
+public interface CopiesService {
+	public List<Integer> findTop7MostBorrowedBookId(); 
 	void deleteAll();
 
 	void deleteAll(List<BookCopies> entities);

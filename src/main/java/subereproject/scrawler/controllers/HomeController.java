@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import subereproject.scrawler.models.Book;
+import subereproject.scrawler.models.Category;
 import subereproject.scrawler.services.BookService;
+import subereproject.scrawler.services.CategoryService;
 import subereproject.scrawler.services.CopiesService;
 import subereproject.scrawler.services.ScrawlerBookService;
 
@@ -24,6 +26,9 @@ public class HomeController {
 	
 	@Autowired
 	private BookService bookService; 
+	
+	@Autowired
+	private CategoryService categoryService;
 	
 	@Autowired
 	private ScrawlerBookService scrawler;
@@ -65,5 +70,10 @@ public class HomeController {
 			books.add(bookService.findById(id).get()); 
 		}
 		return books; 
+	}
+	
+	@ModelAttribute(name = "categories")
+	public List<Category> getCateList(){
+		return categoryService.findAll();
 	}
 }

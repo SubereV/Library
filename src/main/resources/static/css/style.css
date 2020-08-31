@@ -1649,7 +1649,11 @@ ol {
 	border-color: #7fad39;
 	color: #ffffff;
 }
-
+.product__pagination .current{
+	background: #7fad39;
+	border-color: #7fad39;
+	color: #ffffff;
+}
 .product__pagination a:last-child,
 .blog__pagination a:last-child {
 	margin-right: 0;

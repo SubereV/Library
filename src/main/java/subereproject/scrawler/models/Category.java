@@ -1,5 +1,6 @@
 package subereproject.scrawler.models;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -14,10 +15,10 @@ import org.hibernate.annotations.Nationalized;
 
 @Entity
 @Table(name = "Categories")
-public class Category {
+public class Category implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private int id;
 	@Nationalized
 	private String name;
 	@OneToMany(fetch = FetchType.EAGER)
@@ -33,18 +34,18 @@ public class Category {
 		return super.clone();
 	}
 
-	public Category(Integer id, String name, List<Book> books) {
+	public Category(int id, String name, List<Book> books) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.books = books;
 	}
 
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -63,5 +64,5 @@ public class Category {
 	public void setBooks(List<Book> books) {
 		this.books = books;
 	}
-	
+
 }

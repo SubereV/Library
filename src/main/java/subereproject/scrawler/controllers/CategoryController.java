@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import subereproject.scrawler.models.Category;
 import subereproject.scrawler.services.CategoryService;
 
@@ -26,7 +25,7 @@ public class CategoryController {
 	
 	@GetMapping("/{id}")
 	public String getBooks(ModelMap model,@PathVariable Integer id) {
-		model.addAttribute("books", categoryService.findById(id).get().getBooks());
+		model.addAttribute("id", id);
 		return "shop-grid";
 	}
 	

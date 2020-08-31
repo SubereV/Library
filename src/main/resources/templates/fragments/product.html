@@ -1,4 +1,4 @@
-<section class="product spad">
+<section id="product" class="product spad">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3 col-md-5">
@@ -7,8 +7,9 @@
 						<h4>Tất cả Loại sách</h4>
 						<ul>
 							<th:block th:each="category : ${categories}">
-								<li><a th:href="@{'/category/'+${category.id}}"
-									th:text="${category.name}"></a></li>
+								<li><a href="#product"
+								th:onclick="'doGetJSON('+${category.id}+');'"
+									th:text="${category.name}" ></a></li>
 							</th:block>
 						</ul>
 					</div>
@@ -156,7 +157,7 @@
 						<div class="col-lg-4 col-md-4">
 							<div class="filter__found">
 								<h6>
-									<span>16</span> Products found
+									<span id="count"></span> Books found
 								</h6>
 							</div>
 						</div>
@@ -167,17 +168,17 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				<div id="books" class="row">
 					<th:block th:each="book : ${books}">
 						<div class="col-lg-4 col-md-6 col-sm-6">
 							<div class="product__item">
 								<div class="product__item__pic set-bg"
 									th:attr="data-setbg='/img/book/'+${book.id}+'.jpg'">
-									<ul class="product__item__pic__hover">
+									<!--  <ul class="product__item__pic__hover">
 										<li><a href="#"><i class="fa fa-heart"></i></a></li>
 										<li><a href="#"><i class="fa fa-retweet"></i></a></li>
 										<li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-									</ul>
+									</ul>-->
 								</div>
 								<div class="product__item__text">
 									<h6>

@@ -3,12 +3,12 @@
 
 <head th:replace="fragments/head"></head>
 
-<body>
-	<!-- Page Preloder -->
+<body th:onload="'doGetJSON('+${id}+');'" >
+	<!-- Page Preloder  -->
 	<div id="preloder">
 		<div class="loader"></div>
 	</div>
-
+	<input type="hidden" id="category" th:value="${id}"/>
 	<div th:replace="fragments/humble"></div>
 
 	<header th:replace="fragments/header"></header>
@@ -30,6 +30,7 @@
 	<script src="/js/mixitup.min.js"></script>
 	<script src="/js/owl.carousel.min.js"></script>
 	<script src="/js/main.js"></script>
+	<script src="/js/bookInCategory.js"></script>
 
 </body>
 </html>

@@ -27,6 +27,33 @@ function doGetJSON(id) {
 
 }
 
+function search() {
+	var requestOptions = {
+		method: 'GET',
+	};
+	var keywords = document.getElementById("keywords").value;
+	console.log(keywords);
+	var aPromise = fetch("/search?keywords=" + keywords, requestOptions).then(function(response) {
+		if (!response.ok) {
+			throw new Error("HTTP error, status = " + response.status);
+		}
+		return response.json();
+	})
+		.then(function(myJSON) {
+			document.getElementById("count").innerHTML = myJSON.length + "";
+			var element = document.getElementById("books");
+			element.querySelectorAll('*').forEach(n => n.remove());
+			myJSON.forEach(ob => {
+				element.appendChild(blockElement(ob));
+			});
+			document.getElementById("pageNumbers1").querySelectorAll('*').forEach(n => n.remove());
+			$("#books").pagify(9, ".items");
+		})
+		.catch(function(error) {
+		});
+
+}
+
 function changeActive(id) {
 	var x = document.getElementsByClassName("cate");
 	for (let i = 0; i < 5; i++) {

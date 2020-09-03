@@ -11,7 +11,7 @@ import subereproject.scrawler.models.BookCopies;
 import subereproject.scrawler.repositories.CopiesRepository;
 
 @Service
-public class CopiesServiceImpl implements CopiesService{
+public class CopiesServiceImpl implements CopiesService {
 	public List<Integer> findTop7MostBorrowedBookId() {
 		return copiesRepository.findTop7MostBorrowedBookId();
 	}
@@ -73,6 +73,5 @@ public class CopiesServiceImpl implements CopiesService{
 	public void deleteAll() {
 		copiesRepository.deleteAll();
 	}
-	
-	
+
 }

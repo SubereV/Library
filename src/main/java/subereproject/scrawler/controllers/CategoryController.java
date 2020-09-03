@@ -20,13 +20,13 @@ public class CategoryController {
 	
 	@GetMapping
 	public String Cate() {
-		return "shop-grid";
+		return "bookList";
 	}
 	
 	@GetMapping("/{id}")
 	public String getBooks(ModelMap model,@PathVariable Integer id) {
 		model.addAttribute("id", id);
-		return "shop-grid";
+		return "bookList";
 	}
 	
 	@ModelAttribute(name = "categories")

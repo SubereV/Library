@@ -5,21 +5,28 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Nationalized;
+import org.hibernate.search.annotations.Analyze;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Index;
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.Store;
 
 @Entity
 @Table(name = "Books")
+@Indexed
 public class Book {
 
 	@Id
 	private int id;
 	@Nationalized
+	@Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
 	private String title;
 	@Nationalized
+	@Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
 	private String author;
 	@Nationalized
 	private String type;

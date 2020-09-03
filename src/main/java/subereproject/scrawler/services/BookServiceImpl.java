@@ -71,4 +71,15 @@ public class BookServiceImpl implements BookService {
 		bookRepository.deleteAll();
 	}
 
+	@Override
+	public List<Book> findBookByKeywords(String keywords) {
+		return bookRepository.findBookByKeywords(keywords);
+	}
+
+	@Override
+	public void indexBooks() throws Exception {
+		bookRepository.indexBooks();
+	}
+
+	
 }

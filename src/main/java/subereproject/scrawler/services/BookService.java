@@ -29,4 +29,8 @@ public interface BookService {
 
 	Book save(Book entity);
 
+	List<Book> findBookByKeywords(String keywords);
+
+	void indexBooks() throws Exception;
+
 }

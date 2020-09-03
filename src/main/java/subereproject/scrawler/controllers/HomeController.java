@@ -50,7 +50,7 @@ public class HomeController {
 	
 	@RequestMapping("favorite")
 	public String test() {
-		return "shoping-cart";
+		return "bookList";
 	}
 	
 	@RequestMapping("database/crawler")

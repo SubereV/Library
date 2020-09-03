@@ -11,9 +11,8 @@ function doGetJSON(id) {
 			return response.json();
 		})
 		.then(function(myJSON) {
-			console.log("OK! JSON:");
-			console.log(myJSON);
 			document.getElementById("count").innerHTML = myJSON.length + "";
+			changeActive(id);
 			var element = document.getElementById("books");
 			element.querySelectorAll('*').forEach(n => n.remove());
 			document.getElementById("pageNumbers1").querySelectorAll('*').forEach(n => n.remove());
@@ -21,13 +20,25 @@ function doGetJSON(id) {
 				element.appendChild(blockElement(ob));
 			});
 
-
-
-			$("#books").pagify(6, ".items");
+			$("#books").pagify(9, ".items");
 		})
 		.catch(function(error) {
 		});
 
+}
+
+function changeActive(id) {
+	var x = document.getElementsByClassName("cate");
+	for (let i = 0; i < 5; i++) {
+		x[i].childNodes[0].style.color = "#1c1c1c";
+		x[i].childNodes[0].style.fontWeight = "";
+
+		if (id == i + 1) {
+			console.log(x[i]);
+			x[i].childNodes[0].style.color = "#0fa817";
+			x[i].childNodes[0].style.fontWeight = "bold";
+		}
+	}
 }
 
 function blockElement(data) {

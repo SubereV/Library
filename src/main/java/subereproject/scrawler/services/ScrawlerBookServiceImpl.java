@@ -55,7 +55,7 @@ public class ScrawlerBookServiceImpl implements ScrawlerBookService {
 					int total = Integer.parseInt(mLib.group(2));
 					int available = status.matches("Còn") ? Integer.parseInt(mLib.group(4)) : 0;
 					String title = mDes.group(2).split("/")[0];
-					String author = mDes.group(2).split("/")[1];
+					String author = mDes.group(2).split("/")[1].split(";")[0];
 					String publisher = mDes.group(3);
 					String no = mDes.group(4);
 

@@ -14,15 +14,28 @@ function doGetJSON(id) {
 			document.getElementById("count").innerHTML = myJSON.length + "";
 			changeActive(id);
 			var element = document.getElementById("books");
-			element.querySelectorAll('*').forEach(n => n.remove());
-			document.getElementById("pageNumbers1").querySelectorAll('*').forEach(n => n.remove());
-			myJSON.forEach(ob => {
-				element.appendChild(blockElement(ob));
-			});
+			var notfound = document.getElementById("notfound");
+			if (notfound) {
+				notfound.remove();
+				element.querySelectorAll('*').forEach(n => n.remove())
+			} else {
+				element.querySelectorAll('*').forEach(n => n.remove());
+			}
 
-			$("#books").pagify(9, ".items");
+			if (myJSON.length > 0) {
+				myJSON.forEach(ob => {
+					element.appendChild(blockElement(ob));
+				});
+				$("#books").pagify(9, ".items");
+			} else {
+				element = document.getElementById("paginate");
+				var basic = "<div id=\"books\" class=\"row\"></div><div class=\"pager product__pagination\"><div id=\"pageNumbers1\" class=\"pageNumbers\"></div></div>";
+				element.innerHTML = basic + "<p class='alert alert-danger align-self-center' id='notfound'>Not Found</p>";
+			}
+
 		})
 		.catch(function(error) {
+			console.log("log: " + error);
 		});
 
 }
@@ -41,17 +54,29 @@ function search() {
 	})
 		.then(function(myJSON) {
 			document.getElementById("count").innerHTML = myJSON.length + "";
+			changeActive(0);
 			var element = document.getElementById("books");
-			element.querySelectorAll('*').forEach(n => n.remove());
-			myJSON.forEach(ob => {
-				element.appendChild(blockElement(ob));
-			});
-			document.getElementById("pageNumbers1").querySelectorAll('*').forEach(n => n.remove());
-			$("#books").pagify(9, ".items");
+			var notfound = document.getElementById("notfound");
+			if (notfound) {
+				notfound.remove();
+				element.querySelectorAll('*').forEach(n => n.remove())
+			} else {
+				element.querySelectorAll('*').forEach(n => n.remove());
+			}
+			if (myJSON.length > 0) {
+				myJSON.forEach(ob => {
+					element.appendChild(blockElement(ob));
+				});
+				$("#books").pagify(9, ".items");
+			} else {
+				element = document.getElementById("paginate");
+				var basic = "<div id=\"books\" class=\"row\"></div><div class=\"pager product__pagination\"><div id=\"pageNumbers1\" class=\"pageNumbers\"></div></div>";
+				element.innerHTML = basic + "<p class='alert alert-danger align-self-center' id='notfound'>Not Found</p>";
+			}
+
 		})
 		.catch(function(error) {
 		});
-
 }
 
 function changeActive(id) {
@@ -87,7 +112,6 @@ function blockElement(data) {
 	title.appendChild(link);
 	text.appendChild(title);
 	element1.appendChild(text);
-	var li1 = document.createElement("li");
 	element.appendChild(element1);
 	return element;
 }

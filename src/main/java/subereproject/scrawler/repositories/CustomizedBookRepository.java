@@ -9,5 +9,5 @@ public interface CustomizedBookRepository {
 	List<Book> findBookByKeywords(String keywords);
 
 	void indexBooks() throws Exception;
-
+ 
 }

@@ -40,7 +40,7 @@ public class Book {
 	private String status;
 	@OneToMany(mappedBy = "book", fetch = FetchType.EAGER)
 	private List<BookCopies> copies;
-
+	
 	public Book() {
 	}
 

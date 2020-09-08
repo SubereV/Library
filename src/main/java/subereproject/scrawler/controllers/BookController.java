@@ -57,4 +57,5 @@ public class BookController {
 		}
 		return "book-details";
 	}
+	
 }

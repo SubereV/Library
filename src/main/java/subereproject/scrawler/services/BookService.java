@@ -27,10 +27,14 @@ public interface BookService {
 
 	List<Book> saveAll(List<Book> entities);
 
-	Book save(Book entity);
-
 	List<Book> findBookByKeywords(String keywords);
 
 	void indexBooks() throws Exception;
+
+	public void updateBook(int available, int total, String status,  int id); 
+
+	Book save(Book entity);
+
+	List<Integer> findAllId();
 
 }

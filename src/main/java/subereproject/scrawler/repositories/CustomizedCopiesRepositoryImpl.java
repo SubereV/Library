@@ -3,6 +3,7 @@ package subereproject.scrawler.repositories;
 import java.util.List;
 
 import javax.persistence.EntityManagerFactory;
+import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ public class CustomizedCopiesRepositoryImpl implements CustomizedCopiesRepositor
 	private EntityManagerFactory entityManagerFactory; 
 
 	@Override
+	@Transactional
 	public List<Integer> findTop7MostBorrowedBookId() {
 		Session session = entityManagerFactory.createEntityManager().unwrap(Session.class); 
 		

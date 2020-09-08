@@ -16,6 +16,11 @@ public class BookServiceImpl implements BookService {
 	private BookRepository bookRepository;
 
 	@Override
+	public List<Integer> findAllId() {
+		return bookRepository.findAllId();
+	}
+
+	@Override
 	public Book save(Book entity) {
 		System.out.print("success");
 		return (Book) bookRepository.save(entity);
@@ -81,5 +86,9 @@ public class BookServiceImpl implements BookService {
 		bookRepository.indexBooks();
 	}
 
+	@Override
+	public void updateBook(int available, int total, String status,  int id) {
+		bookRepository.updateBook(available, total, status, id);
+	}
 	
 }

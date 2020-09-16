@@ -27,13 +27,6 @@
 			<version>5.5.4</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.google.firebase/firebase-admin -->
-		<dependency>
-			<groupId>com.google.firebase</groupId>
-			<artifactId>firebase-admin</artifactId>
-			<version>7.0.0</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-search-orm</artifactId>

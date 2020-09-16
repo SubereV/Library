@@ -18,6 +18,7 @@ public class CustomizedBookRepositoryImpl implements CustomizedBookRepository {
 	@Autowired
 	EntityManagerFactory entityManagerFactory;
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Book> findBookByKeywords(String keywords) {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();

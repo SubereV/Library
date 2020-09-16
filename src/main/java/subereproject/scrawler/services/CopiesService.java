@@ -30,4 +30,8 @@ public interface CopiesService {
 
 	BookCopies save(BookCopies entity);
 
+	void updateBookCopy(String status, String code);
+
+	boolean existsByCode(String code);
+
 }

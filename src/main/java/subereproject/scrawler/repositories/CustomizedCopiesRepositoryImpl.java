@@ -19,7 +19,9 @@ public class CustomizedCopiesRepositoryImpl implements CustomizedCopiesRepositor
 	public List<Integer> findTop7MostBorrowedBookId() {
 		Session session = entityManagerFactory.createEntityManager().unwrap(Session.class); 
 		
+		@SuppressWarnings("rawtypes")
 		Query query = session.createQuery("Select c.book.id from BookCopies c where c.status='loan' group by c.book.id order by count(c.status) desc").setMaxResults(7);
+		@SuppressWarnings("unchecked")
 		List<Integer> list = query.list(); 
 		return list;
 	}

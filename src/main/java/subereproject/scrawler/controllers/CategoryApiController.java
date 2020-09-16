@@ -23,6 +23,7 @@ public class CategoryApiController {
 	@Autowired
 	private BookService bookService;
 	
+	@SuppressWarnings("rawtypes")
 	@GetMapping("/null")
 	public ResponseEntity getallBooks() {
 		Set<Map<String, String>> books = new HashSet<Map<String,String>>();
@@ -35,6 +36,7 @@ public class CategoryApiController {
 		return ResponseEntity.ok(books);
 	}
 
+	@SuppressWarnings("rawtypes")
 	@GetMapping("{id}")
 	public ResponseEntity getBooks(@PathVariable Integer id) {
 		Set<Map<String, String>> books = new HashSet<Map<String,String>>();

@@ -5,8 +5,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import subereproject.scrawler.models.Book;
 import subereproject.scrawler.models.BookCopies;
 import subereproject.scrawler.repositories.CopiesRepository;
 
@@ -74,4 +72,14 @@ public class CopiesServiceImpl implements CopiesService {
 		copiesRepository.deleteAll();
 	}
 
+	@Override
+	public void updateBookCopy(String status, String code) {
+		copiesRepository.updateBookCopy(status, code);
+	}
+
+	@Override
+	public boolean existsByCode(String code) {
+		return copiesRepository.existsByCode(code);
+	}
+	
 }

@@ -20,6 +20,7 @@ public class SearchController {
 	@Autowired
 	BookService bookService;
 
+	@SuppressWarnings("rawtypes")
 	@GetMapping
 	public ResponseEntity search(ModelMap model, @RequestParam String keywords) {
 		Set<Map<String, String>> books = new HashSet<Map<String, String>>();

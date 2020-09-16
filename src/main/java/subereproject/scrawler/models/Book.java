@@ -3,7 +3,6 @@ package subereproject.scrawler.models;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -15,9 +14,16 @@ import org.hibernate.search.annotations.Index;
 import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.Store;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
 @Table(name = "Books")
 @Indexed
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Book {
 
 	@Id
@@ -38,11 +44,8 @@ public class Book {
 	private int total;
 	@Nationalized
 	private String status;
-	@OneToMany(mappedBy = "book", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "book")
 	private List<BookCopies> copies;
-	
-	public Book() {
-	}
 
 	public Book(int id, String title, String author, String type, String publisher, String no, int available, int total,
 			String status) {
@@ -56,86 +59,6 @@ public class Book {
 		this.available = available;
 		this.total = total;
 		this.status = status;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getAuthor() {
-		return author;
-	}
-
-	public void setAuthor(String author) {
-		this.author = author;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public String getPublisher() {
-		return publisher;
-	}
-
-	public void setPublisher(String publisher) {
-		this.publisher = publisher;
-	}
-
-	public String getNo() {
-		return no;
-	}
-
-	public void setNo(String no) {
-		this.no = no;
-	}
-
-	public int getAvailable() {
-		return available;
-	}
-
-	public void setAvailable(int available) {
-		this.available = available;
-	}
-
-	public int getTotal() {
-		return total;
-	}
-
-	public void setTotal(int total) {
-		this.total = total;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public List<BookCopies> getCopies() {
-		return copies;
-	}
-
-	public void setCopies(List<BookCopies> copies) {
-		this.copies = copies;
 	}
 
 	@Override

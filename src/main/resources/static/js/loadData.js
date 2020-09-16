@@ -46,7 +46,7 @@ function search() {
 	};
 	var keywords = document.getElementById("keywords").value;
 	console.log(keywords);
-	var aPromise = fetch("/search?keywords=" + keywords, requestOptions).then(function(response) {
+	fetch("/search?keywords=" + keywords, requestOptions).then(function(response) {
 		if (!response.ok) {
 			throw new Error("HTTP error, status = " + response.status);
 		}
@@ -59,15 +59,16 @@ function search() {
 			var notfound = document.getElementById("notfound");
 			if (notfound) {
 				notfound.remove();
-				element.querySelectorAll('*').forEach(n => n.remove())
+				element.querySelectorAll('*').forEach(n => n.remove());
 			} else {
+				document.getElementsByClassName("product__pagination")[0].remove();
 				element.querySelectorAll('*').forEach(n => n.remove());
 			}
 			if (myJSON.length > 0) {
 				myJSON.forEach(ob => {
 					element.appendChild(blockElement(ob));
 				});
-				$("#books").pagify(9, ".items");
+
 			} else {
 				element = document.getElementById("paginate");
 				var basic = "<div id=\"books\" class=\"row\"></div><div class=\"pager product__pagination\"><div id=\"pageNumbers1\" class=\"pageNumbers\"></div></div>";

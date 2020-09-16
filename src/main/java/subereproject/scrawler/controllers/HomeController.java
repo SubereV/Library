@@ -16,7 +16,8 @@ import subereproject.scrawler.models.Category;
 import subereproject.scrawler.services.BookService;
 import subereproject.scrawler.services.CategoryService;
 import subereproject.scrawler.services.CopiesService;
-import subereproject.scrawler.services.ScrawlerBookService;
+import subereproject.scrawler.services.FindnBookService;
+import subereproject.scrawler.services.UpdateBookDBService;
 
 @Controller
 @RequestMapping("/")
@@ -31,7 +32,10 @@ public class HomeController {
 	private CategoryService categoryService;
 	
 	@Autowired
-	private ScrawlerBookService scrawler;
+	private UpdateBookDBService updateBookService;
+	
+	@Autowired
+	private FindnBookService findnbookService;
 	
 	@GetMapping
 	public String index() {
@@ -53,12 +57,19 @@ public class HomeController {
 		return "bookList";
 	}
 	
-	@RequestMapping("database/crawler")
+	@RequestMapping("database/update")
 	public String crawler() {
-		scrawler.run();
+		updateBookService.run();
 		return "success";
 	}
 	
+	@RequestMapping("database/findNewBook")
+	public String findnBook() {
+		findnbookService.run();
+		return "success";
+	}
+	
+	@SuppressWarnings("rawtypes")
 	@ModelAttribute(name = "topPopularBooks")
 	public List<Book> findById() {
 		List<Book> books = new ArrayList<>();

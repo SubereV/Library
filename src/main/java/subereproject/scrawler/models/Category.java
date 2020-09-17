@@ -32,7 +32,7 @@ public class Category implements Serializable {
 	private int id;
 	@Nationalized
 	private String name;
-	@OneToMany(fetch = FetchType.EAGER)
+	@OneToMany(fetch = FetchType.EAGER,mappedBy = "category")
 	private List<Book> books;
-	
+
 }

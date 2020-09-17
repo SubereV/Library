@@ -74,7 +74,7 @@ public class FindnBookServiceImpl implements FindnBookService {
 						String publisher = mDes.group(3);
 						String no = mDes.group(4);
 						bookService
-								.save(new Book(id, title, author, type, publisher, no, available, total, status, null));
+								.save(new Book(id, title, author, type, publisher, no, available, total, status));
 						newBooks.add(id);
 						String contentCopy = getContentFrom(new PageList().getPage(3).getUrl() + id);
 						getCollection(contentCopy, id);

@@ -46,7 +46,6 @@ public class UpdateBookDBServiceImpl implements UpdateBookDBService {
 					String status = "Khóa";
 					mState = pNotAvailable.matcher(content);
 					mState.find();
-					System.out.println("state: " + status);
 					int total = Integer.parseInt(mState.group(2).split("&")[0]);
 					int available = total - Integer.parseInt(mState.group(4).split("&")[0]);
 					bookService.updateBook(available, total, status, id);

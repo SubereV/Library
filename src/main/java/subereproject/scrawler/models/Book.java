@@ -2,19 +2,19 @@ package subereproject.scrawler.models;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
 import org.hibernate.annotations.Nationalized;
 import org.hibernate.search.annotations.Analyze;
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Index;
 import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.Store;
-
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -22,17 +22,16 @@ import lombok.NoArgsConstructor;
 @Table(name = "Books")
 @Indexed
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class Book {
 
 	@Id
 	private int id;
 	@Nationalized
-	@Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
+	@Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
 	private String title;
 	@Nationalized
-	@Field(index= Index.YES, analyze= Analyze.YES, store= Store.NO)
+	@Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
 	private String author;
 	@Nationalized
 	private String type;
@@ -44,8 +43,13 @@ public class Book {
 	private int total;
 	@Nationalized
 	private String status;
+	@Column(columnDefinition = "NVARCHAR(MAX)")
+	private String description;
 	@OneToMany(mappedBy = "book")
 	private List<BookCopies> copies;
+	@ManyToOne
+	@JoinColumn(name = "cateID")
+	private Category category;
 
 	public Book(int id, String title, String author, String type, String publisher, String no, int available, int total,
 			String status) {

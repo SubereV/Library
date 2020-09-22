@@ -73,8 +73,7 @@ public class FindnBookServiceImpl implements FindnBookService {
 						String author = mDes.group(2).split("/")[1].split(";")[0];
 						String publisher = mDes.group(3);
 						String no = mDes.group(4);
-						bookService
-								.save(new Book(id, title, author, type, publisher, no, available, total, status));
+						bookService.save(new Book(id, title, author, type, publisher, no, available, total, status));
 						newBooks.add(id);
 						String contentCopy = getContentFrom(new PageList().getPage(3).getUrl() + id);
 						getCollection(contentCopy, id);
@@ -85,7 +84,6 @@ public class FindnBookServiceImpl implements FindnBookService {
 			}
 		} catch (Exception ex) {
 			error.put(String.valueOf(id), ex.getMessage());
-			return false;
 		}
 		return true;
 	}
@@ -115,29 +113,32 @@ public class FindnBookServiceImpl implements FindnBookService {
 
 	private boolean scan(int id) {
 		String contentBook = getContentFrom(new PageList().getPage(2).getUrl() + id);
-		return getDetails(contentBook, id);
+		getDetails(contentBook, id);
+		return contentBook != null;
 	}
 
 	@Override
 	public void run() {
 		int fault = 0, index = 0, id = 0;
 		List<Integer> bookID = bookService.findAllId();
-
-		ExecutorService executorService = Executors.newSingleThreadExecutor();
-		while (fault < 5) {
+		copiesService.deleteAll(bookService.findById(95).get().getCopies());
+		bookService.deleteById(95);
+		copiesService.deleteAll(bookService.findById(187).get().getCopies());
+		bookService.deleteById(187);
+		ExecutorService executorService = Executors.newFixedThreadPool(3);
+		while (fault < 100) {
 			if (index != bookID.get(id)) {
-				fault = scan(index) ? 0 : fault++;
+				fault = scan(index) ? 0 : ++fault;
 				System.out.print("> " + index + " - " + bookID.get(id) + " ~ " + fault);
 			} else {
 				id++;
-			}
-			if(id == bookID.size()) {
-				fault = 5;
+				if (id >= bookID.size())
+					id = bookID.size() - 1;
 			}
 			index++;
 		}
 		executorService.shutdown();
-		newBooks.forEach((book)->{
+		newBooks.forEach((book) -> {
 			System.out.println("New book: " + book);
 		});
 		error.forEach((target, ex) -> {

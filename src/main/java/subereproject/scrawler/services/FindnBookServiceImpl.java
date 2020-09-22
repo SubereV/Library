@@ -121,10 +121,6 @@ public class FindnBookServiceImpl implements FindnBookService {
 	public void run() {
 		int fault = 0, index = 0, id = 0;
 		List<Integer> bookID = bookService.findAllId();
-		copiesService.deleteAll(bookService.findById(95).get().getCopies());
-		bookService.deleteById(95);
-		copiesService.deleteAll(bookService.findById(187).get().getCopies());
-		bookService.deleteById(187);
 		ExecutorService executorService = Executors.newFixedThreadPool(3);
 		while (fault < 100) {
 			if (index != bookID.get(id)) {

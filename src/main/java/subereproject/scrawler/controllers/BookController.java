@@ -30,7 +30,6 @@ public class BookController {
 	@ResponseBody
 	public ResponseEntity<ByteArrayResource> bookImage(@PathVariable int id) {
 		Optional<Book> bookById = bookService.findById(id); 
-
 		if (bookById.isPresent()) {
 			Book book = bookById.get(); 
 			try {

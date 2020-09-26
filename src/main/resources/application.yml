@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    password: 213546Az
+    url: jdbc:sqlserver://localhost;databaseName=Library
+    username: sa
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  thymeleaf:
+    cache: false

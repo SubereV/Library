@@ -47,42 +47,33 @@ public class FindnBookServiceImpl implements FindnBookService {
 		try {
 			if (content != null) {
 				Matcher mState = pStatus.matcher(content);
-				if (!mState.find()) {
-					String status = "Khóa";
-					mState = pLock.matcher(content);
-					mState.find();
-					System.out.println("state: " + status);
-					int total = Integer.parseInt(mState.group(2).split("&")[0]);
-					int available = total - Integer.parseInt(mState.group(4).split("&")[0]);
-					bookService.updateBook(available, total, status, id);
-					bookService.findById(id);
+				mState.find();
+				String status = mState.group(2).matches("Rỗi") ? "Còn" : "Hết";
+				Matcher mLib = status.matches("Còn") ? pAvai.matcher(content) : pUnavailable.matcher(content);
+				Matcher mType = pType.matcher(content);
+				Matcher mDes = pDescription.matcher(content);
+				if (mLib.find()) {
+					mType.find();
+					mDes.find();
+					String type = mType.group(2);
+					int total = Integer.parseInt(mLib.group(2).split("&")[0]);
+					int available = status.matches("Còn") ? Integer.parseInt(mLib.group(4).split("&")[0]) : 0;
+					String title = mDes.group(2).split("/")[0];
+					String author = mDes.group(2).split("/")[1].split(";")[0];
+					String publisher = mDes.group(3);
+					String no = mDes.group(4);
+					bookService.save(new Book(id, title, author, type, publisher, no, available, total, status));
+					newBooks.add(id);
 					String contentCopy = getContentFrom(new PageList().getPage(3).getUrl() + id);
 					getCollection(contentCopy, id);
-				} else {
-					String status = mState.group(2).matches("Rỗi") ? "Còn" : "Hết";
-					Matcher mLib = status.matches("Còn") ? pAvai.matcher(content) : pUnavailable.matcher(content);
-					Matcher mType = pType.matcher(content);
-					Matcher mDes = pDescription.matcher(content);
-					if (mLib.find()) {
-						mType.find();
-						mDes.find();
-						String type = mType.group(2);
-						int total = Integer.parseInt(mLib.group(2).split("&")[0]);
-						int available = status.matches("Còn") ? Integer.parseInt(mLib.group(4).split("&")[0]) : 0;
-						String title = mDes.group(2).split("/")[0];
-						String author = mDes.group(2).split("/")[1].split(";")[0];
-						String publisher = mDes.group(3);
-						String no = mDes.group(4);
-						bookService.save(new Book(id, title, author, type, publisher, no, available, total, status));
-						newBooks.add(id);
-						String contentCopy = getContentFrom(new PageList().getPage(3).getUrl() + id);
-						getCollection(contentCopy, id);
-					}
 				}
+
 			} else {
 				return false;
 			}
-		} catch (Exception ex) {
+		} catch (
+
+		Exception ex) {
 			error.put(String.valueOf(id), ex.getMessage());
 		}
 		return true;
@@ -125,7 +116,7 @@ public class FindnBookServiceImpl implements FindnBookService {
 		while (fault < 100) {
 			if (index != bookID.get(id)) {
 				fault = scan(index) ? 0 : ++fault;
-				System.out.print("> " + index + " - " + bookID.get(id) + " ~ " + fault);
+				System.out.println("> " + index + " - " + bookID.get(id) + " ~ " + fault);
 			} else {
 				id++;
 				if (id >= bookID.size())

@@ -30,7 +30,7 @@ public class SearchController {
 			book.put("title", b.getTitle());
 			books.add(book);
 		});
-		return ResponseEntity.ok().body(books);
+		return ResponseEntity.ok(books);
 	}
 
 	@GetMapping("/indexData")

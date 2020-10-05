@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy JAR app to Azure Web App - fudnlibrary
+name: Build and deploy JAR app to Azure Web App - fulibrary
 
 on:
   push:
@@ -26,7 +26,7 @@ jobs:
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'fudnlibrary'
+        app-name: 'fulibrary'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_274f369aa70042cfacaf05c4f5d18b49 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_dcbdfecf010c41e686eccabaf2093725 }}
         package: '${{ github.workspace }}/target/*.jar'

@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import subereproject.scrawler.models.Book;
 import subereproject.scrawler.services.BookService;
 
 @RestController
@@ -35,10 +33,9 @@ public class SearchController {
 		if (bookService.findBookByKeywords(keywords).size() == 0) {
 			return ResponseEntity.ok("false");
 		}
-		Book b = bookService.findById(516).get();
 		Map<String, String> book = new HashMap<String, String>();
-		book.put("id", String.valueOf(b.getId()));
-		book.put("title", b.getTitle());
+		book.put("id", String.valueOf(516));
+		book.put("title", "Yoh");
 		books.add(book);
 		return ResponseEntity.ok(books);
 	}

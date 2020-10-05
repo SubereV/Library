@@ -41,12 +41,9 @@ function doGetJSON(id) {
 }
 
 function search() {
-	var requestOptions = {
-		method: 'GET',
-	};
 	var keywords = document.getElementById("keywords").value;
 	console.log(keywords);
-	fetch("/search?keywords=" + keywords, requestOptions).then(function(response) {
+	fetch("/search?keywords=" + keywords).then(function(response) {
 		if (!response.ok) {
 			throw new Error("HTTP error, status = " + response.status);
 		}

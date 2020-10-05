@@ -34,7 +34,7 @@ public class SearchController {
 			return ResponseEntity.ok("false");
 		}
 
-		return ResponseEntity.ok(books);
+		return ResponseEntity.ok("false");
 	}
 
 	@GetMapping("/indexData")

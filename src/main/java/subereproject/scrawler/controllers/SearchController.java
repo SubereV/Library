@@ -31,7 +31,7 @@ public class SearchController {
 			books.add(book);
 		});
 		if (bookService.findBookByKeywords(keywords).size() == 0) {
-			return ResponseEntity.ok("false");
+			return ResponseEntity.ok(keywords);
 		}
 		Map<String, String> book = new HashMap<String, String>();
 		book.put("id", String.valueOf(516));

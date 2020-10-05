@@ -4,6 +4,8 @@ spring:
     password: 213546Az
     url: jdbc:sqlserver://suberev.database.windows.net:1433;database=FudnLibrary;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
     username: SubereV@suberev
+    tomcat:
+      max-active: 5
   jpa:
     hibernate:
       ddl-auto: update

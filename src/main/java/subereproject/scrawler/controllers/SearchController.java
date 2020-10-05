@@ -30,6 +30,10 @@ public class SearchController {
 			book.put("title", b.getTitle());
 			books.add(book);
 		});
+		if (bookService.findBookByKeywords(keywords).size() == 0) {
+			return ResponseEntity.ok("false");
+		}
+
 		return ResponseEntity.ok(books);
 	}
 

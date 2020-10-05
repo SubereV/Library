@@ -9,6 +9,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.regex.Matcher;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import subereproject.scrawler.models.BookCopies;
 import subereproject.scrawler.models.PageList;
@@ -99,7 +100,8 @@ public class UpdateBookDBServiceImpl implements UpdateBookDBService {
 	}
 
 	@Override
-	public void run() {
+	@Scheduled(cron = "0 0 */2 * * Mon-Sat")
+	public void updateBooks() {
 		ExecutorService executorService = Executors.newFixedThreadPool(5);
 		for (Integer index : bookService.findAllId()) {
 			scan(index);
@@ -109,5 +111,4 @@ public class UpdateBookDBServiceImpl implements UpdateBookDBService {
 			System.out.println("Error> " + target + ": " + ex);
 		});
 	}
-
 }

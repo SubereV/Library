@@ -10,3 +10,8 @@ spring:
     show-sql: true
   thymeleaf:
     cache: false
+  task:
+    scheduling:
+      pool:
+        size: 5
+    

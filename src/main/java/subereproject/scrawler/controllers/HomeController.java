@@ -1,6 +1,5 @@
 package subereproject.scrawler.controllers;
 
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -24,19 +23,19 @@ import subereproject.scrawler.services.UpdateBookDBService;
 public class HomeController {
 	@Autowired
 	private CopiesService copyCopiesService;
-	
+
 	@Autowired
-	private BookService bookService; 
-	
+	private BookService bookService;
+
 	@Autowired
 	private CategoryService categoryService;
-	
+
 	@Autowired
 	private UpdateBookDBService updateBookService;
-	
+
 	@Autowired
 	private FindnBookService findnbookService;
-	
+
 	@GetMapping
 	public String index() {
 		return "index";
@@ -46,45 +45,45 @@ public class HomeController {
 	public String book() {
 		return "book-details";
 	}
-	
+
 	@RequestMapping("contact")
 	public String contact() {
 		return "contact";
 	}
-	
+
 	@RequestMapping("favorite")
 	public String test() {
 		return "bookList";
 	}
-	
+
 	@RequestMapping("database/update")
 	public String crawler() {
-		updateBookService.run();
+		updateBookService.updateBooks();
 		return "success";
 	}
-	
+
 	@RequestMapping("database/findNewBook")
 	public String findnBook() {
-		findnbookService.run();
+		findnbookService.FindNewBook();
 		return "success";
 	}
-	
+
 	@SuppressWarnings("rawtypes")
 	@ModelAttribute(name = "topPopularBooks")
 	public List<Book> findById() {
 		List<Book> books = new ArrayList<>();
-		List<Integer> bookIds = copyCopiesService.findTop7MostBorrowedBookId(); 
-		
+		List<Integer> bookIds = copyCopiesService.findTop7MostBorrowedBookId();
+
 		for (Iterator iterator = bookIds.iterator(); iterator.hasNext();) {
 			Integer id = (Integer) iterator.next();
-			
-			books.add(bookService.findById(id).get()); 
+
+			books.add(bookService.findById(id).get());
 		}
-		return books; 
+		return books;
 	}
-	
+
 	@ModelAttribute(name = "categories")
-	public List<Category> getCateList(){
+	public List<Category> getCateList() {
 		return categoryService.findAll();
 	}
 }

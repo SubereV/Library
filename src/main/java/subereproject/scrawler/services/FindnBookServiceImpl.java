@@ -12,6 +12,7 @@ import java.util.concurrent.Executors;
 import java.util.regex.Matcher;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import subereproject.scrawler.models.Book;
@@ -109,7 +110,8 @@ public class FindnBookServiceImpl implements FindnBookService {
 	}
 
 	@Override
-	public void run() {
+	@Scheduled(cron = "0 0 18 * * Mon-Fri")
+	public void FindNewBook() {
 		int fault = 0, index = 0, id = 0;
 		List<Integer> bookID = bookService.findAllId();
 		ExecutorService executorService = Executors.newFixedThreadPool(3);

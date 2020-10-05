@@ -1,5 +1,6 @@
 package subereproject.scrawler.models;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -23,8 +24,12 @@ import lombok.NoArgsConstructor;
 @Indexed
 @Data
 @NoArgsConstructor
-public class Book {
+public class Book implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	private int id;
 	@Nationalized

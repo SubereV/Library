@@ -1,5 +1,7 @@
 package subereproject.scrawler.models;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,7 +11,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Collections")
-public class BookCopies {
+public class BookCopies implements Serializable {
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@Column(length = 13)
 	private String code;

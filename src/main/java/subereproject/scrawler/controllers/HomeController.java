@@ -15,8 +15,6 @@ import subereproject.scrawler.models.Category;
 import subereproject.scrawler.services.BookService;
 import subereproject.scrawler.services.CategoryService;
 import subereproject.scrawler.services.CopiesService;
-import subereproject.scrawler.services.FindnBookService;
-import subereproject.scrawler.services.UpdateBookDBService;
 
 @Controller
 @RequestMapping("/")
@@ -29,12 +27,6 @@ public class HomeController {
 
 	@Autowired
 	private CategoryService categoryService;
-
-	@Autowired
-	private UpdateBookDBService updateBookService;
-
-	@Autowired
-	private FindnBookService findnbookService;
 
 	@GetMapping
 	public String index() {
@@ -54,18 +46,6 @@ public class HomeController {
 	@RequestMapping("favorite")
 	public String test() {
 		return "bookList";
-	}
-
-	@RequestMapping("database/update")
-	public String crawler() {
-		updateBookService.updateBooks();
-		return "success";
-	}
-
-	@RequestMapping("database/findNewBook")
-	public String findnBook() {
-		findnbookService.FindNewBook();
-		return "success";
 	}
 
 	@SuppressWarnings("rawtypes")

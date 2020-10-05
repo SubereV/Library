@@ -77,16 +77,6 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
-	public List<Book> findBookByKeywords(String keywords) {
-		return bookRepository.findBookByKeywords(keywords);
-	}
-
-	@Override
-	public void indexBooks() throws Exception {
-		bookRepository.indexBooks();
-	}
-
-	@Override
 	public void updateBook(int available, int total, String status,  int id) {
 		bookRepository.updateBook(available, total, status, id);
 	}

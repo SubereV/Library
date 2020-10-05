@@ -1,6 +1,5 @@
 package subereproject.scrawler.repositories;
 
-
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -14,12 +13,13 @@ import org.springframework.stereotype.Repository;
 import subereproject.scrawler.models.Book;
 
 @Repository
-public interface BookRepository extends CrudRepository<Book, Integer>, CustomizedBookRepository {
+public interface BookRepository extends CrudRepository<Book, Integer> {
 	@Transactional
 	@Modifying
 	@Query("Update Book b set b.available = :newAvailable, b.total = :newTotal, b.status = :newStatus where b.id = :newId")
-	void updateBook(@Param("newAvailable") int available, @Param("newTotal") int total,@Param("newStatus") String status, @Param("newId") int id);
-	
+	void updateBook(@Param("newAvailable") int available, @Param("newTotal") int total,
+			@Param("newStatus") String status, @Param("newId") int id);
+
 	@Query("select b.id from Book b")
-	List<Integer> findAllId(); 
+	List<Integer> findAllId();
 }

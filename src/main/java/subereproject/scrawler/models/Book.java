@@ -11,17 +11,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import org.hibernate.annotations.Nationalized;
-import org.hibernate.search.annotations.Analyze;
-import org.hibernate.search.annotations.Field;
-import org.hibernate.search.annotations.Index;
-import org.hibernate.search.annotations.Indexed;
-import org.hibernate.search.annotations.Store;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "Books")
-@Indexed
 @Data
 @NoArgsConstructor
 public class Book implements Serializable {
@@ -33,10 +27,8 @@ public class Book implements Serializable {
 	@Id
 	private int id;
 	@Nationalized
-	@Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
 	private String title;
 	@Nationalized
-	@Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
 	private String author;
 	@Nationalized
 	private String type;

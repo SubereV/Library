@@ -1,7 +1,9 @@
 package subereproject.scrawler.services;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +26,14 @@ public class BookServiceImpl implements BookService {
 	public Book save(Book entity) {
 		System.out.print("success");
 		return (Book) bookRepository.save(entity);
+	}
+
+	
+
+
+	@Override
+	public List<String[]> findByCategoryNull() {
+		return bookRepository.findByCategoryNull();
 	}
 
 	@Override

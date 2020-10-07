@@ -14,13 +14,12 @@ import subereproject.scrawler.models.Category;
 import subereproject.scrawler.services.BookService;
 
 @RestController
-@RequestMapping("/cate/")
+@RequestMapping("cate")
 public class CategoryApiController {
 	@Autowired
 	private BookService bookService;
 
-	@SuppressWarnings("rawtypes")
-	@GetMapping("/allBook")
+	@GetMapping("allBook")
 	public ResponseEntity getallBooks() {
 		Set<Map<String, String>> books = new HashSet<Map<String, String>>();
 		bookService.findAll().forEach(book -> {

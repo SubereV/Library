@@ -1,6 +1,8 @@
 package subereproject.scrawler.repositories;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import javax.transaction.Transactional;
 
@@ -22,4 +24,6 @@ public interface BookRepository extends CrudRepository<Book, Integer> {
 
 	@Query("select b.id from Book b")
 	List<Integer> findAllId();
+	@Query("select b.id, b.title from Book b where b.category is null")
+	List<String[]> findByCategoryNull();
 }

@@ -1,7 +1,9 @@
 package subereproject.scrawler.services;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
 import subereproject.scrawler.models.Book;
 
@@ -32,5 +34,9 @@ public interface BookService {
 	Book save(Book entity);
 
 	List<Integer> findAllId();
+
+	List<String[]> findByCategoryNull();
+
+	
 
 }

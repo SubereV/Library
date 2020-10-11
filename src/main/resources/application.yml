@@ -2,8 +2,8 @@ spring:
   datasource:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     password: 213546Az
-    url: jdbc:sqlserver://suberev.database.windows.net:1433;database=FudnLibrary;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
-    username: SubereV@suberev
+    url: jdbc:sqlserver://my-project.database.windows.net:1433;database=FudnLibrary;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;encrypt=true;
+    username: suberev@my-project;  
   jpa:
     hibernate:
       ddl-auto: update

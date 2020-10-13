@@ -3,11 +3,7 @@ package subereproject.scrawler.controllers;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
-import java.util.Map;
 import java.util.Optional;
-import java.util.Set;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.MediaType;
@@ -29,6 +25,7 @@ public class BookController {
 	@Autowired
 	private BookService bookService; 
 	
+	//Replace by github link
 	@GetMapping("/image/{id}")
 	@ResponseBody
 	public ResponseEntity<ByteArrayResource> bookImage(@PathVariable int id) {
@@ -60,9 +57,5 @@ public class BookController {
 		return "book-details";
 	}
 	
-	@ResponseBody
-	@GetMapping("null")
-	public List<String[]> getBookNull(){
-		return bookService.findByCategoryNull();
-	}
+	
 }

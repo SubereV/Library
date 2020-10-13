@@ -9,7 +9,7 @@ import subereproject.scrawler.services.UpdateBookDBService;
 
 @Controller
 @RequestMapping("database")
-public class DataController {
+public class DatabaseController {
 
 	@Autowired
 	private UpdateBookDBService updateBookService;

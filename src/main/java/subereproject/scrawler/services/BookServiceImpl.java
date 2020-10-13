@@ -1,13 +1,9 @@
 package subereproject.scrawler.services;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
-import java.util.Set;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import subereproject.scrawler.models.Book;
 import subereproject.scrawler.repositories.BookRepository;
 
@@ -28,8 +24,10 @@ public class BookServiceImpl implements BookService {
 		return (Book) bookRepository.save(entity);
 	}
 
-	
-
+	@Override
+	public Book findByTitle(String title) {
+		return bookRepository.findByTitle(title);
+	}
 
 	@Override
 	public List<String[]> findByCategoryNull() {

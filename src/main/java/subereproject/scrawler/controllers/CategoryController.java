@@ -22,7 +22,7 @@ public class CategoryController {
 	public String Cate() {
 		return "bookList";
 	}
-	
+	//Replace by book-api
 	@GetMapping("/{id}")
 	public String getBooks(ModelMap model,@PathVariable Integer id) {
 		model.addAttribute("id", id);

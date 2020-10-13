@@ -35,11 +35,11 @@ public class BookApi {
 		});
 		return ResponseEntity.ok(books);
 	}
-	@GetMapping("{id}")
+	@GetMapping("/{id}")
 	public ResponseEntity getBookById(@PathVariable Integer id) {
 		return ResponseEntity.ok(bookService.findById(id).get());
 	}
-	@GetMapping("title/{title}")
+	@GetMapping("/title/{title}")
 	public ResponseEntity getBookByTitle(@PathVariable String title) {
 		Book book = bookService.findByTitle(title);
 		Map<String, String> b = new HashMap<String, String>();
@@ -49,13 +49,13 @@ public class BookApi {
 		b.put("publisher", book.getPublisher());
 		b.put("available", String.valueOf(book.getAvailable()));
 		b.put("total", String.valueOf(book.getTotal()));
-		b.put("total", String.valueOf(book.getStatus()));
+		b.put("status", String.valueOf(book.getStatus()));
 		b.put("no", book.getNo());
 		b.put("category", String.valueOf(book.getCategory().getName()));
 		b.put("author", book.getAuthor());
 		return ResponseEntity.ok(b);
 	}
-	@GetMapping("newBook")
+	@GetMapping("/newBook")
 	public ResponseEntity getNewBook(){
 		return ResponseEntity.ok(bookService.findByCategoryNull());
 	}

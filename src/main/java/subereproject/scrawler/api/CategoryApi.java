@@ -41,4 +41,14 @@ public class CategoryApi {
                 })
                 .get();
     }
+
+    @DeleteMapping("/delete/{id}")
+    public Map<String, Boolean> deleteCategory(@PathVariable int id) {
+        Category category = categoryService.findById(id)
+                .orElseThrow(() -> new RuntimeException("Category not found: " + id));
+        categoryService.delete(category);
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("deleted", Boolean.TRUE);
+        return response;
+    }
 }

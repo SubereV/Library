@@ -21,7 +21,7 @@ public class BookApi {
 	private BookService bookService;
 
 	@GetMapping
-	public ResponseEntity getAllBooks() {
+	public ResponseEntity<?> getAllBooks() {
 		Set<Map<String, String>> books = new HashSet<Map<String, String>>();
 		bookService.findAll().forEach(book -> {
 			if (book.getCategory() != null) {
@@ -36,7 +36,7 @@ public class BookApi {
 		return ResponseEntity.ok(books);
 	}
 	@GetMapping("{id}")
-	public ResponseEntity getBookById(@PathVariable Integer id) {
+	public ResponseEntity<?> getBookById(@PathVariable Integer id) {
 		return ResponseEntity.ok(bookService.findById(id).get());
 	}
 	@GetMapping("title/{title}")

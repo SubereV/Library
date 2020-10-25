@@ -1,10 +1,8 @@
 package subereproject.scrawler.models;
 
-import java.io.Serializable;
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,15 +20,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Category implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+public class Category{
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
 	@Nationalized
 	private String name;
-	@OneToMany(fetch = FetchType.EAGER,mappedBy = "category")
-	private List<Book> books;
-
+	
+	@OneToMany(mappedBy = "category")
+	private Set<Book> books;
 }

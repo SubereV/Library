@@ -1,17 +1,14 @@
 spring:
   datasource:
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    password: 213546Az
-    url: jdbc:sqlserver://my-project.database.windows.net:1433;database=FudnLibrary;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
-    username: suberev@my-project
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: E6pA44Ge0X
+    url: jdbc:mysql://remotemysql.com:3306/CiRxnnyC9j
+    username: CiRxnnyC9j
   jpa:
     hibernate:
       ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
-  thymeleaf:
-    cache: false
-  task:
-    scheduling:
-      pool:
-        size: 5
     

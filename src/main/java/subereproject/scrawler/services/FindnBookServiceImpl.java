@@ -59,7 +59,7 @@ public class FindnBookServiceImpl implements FindnBookService {
 					String type = mType.group(2);
 					int total = Integer.parseInt(mLib.group(2).split("&")[0]);
 					int available = status.matches("Còn") ? Integer.parseInt(mLib.group(4).split("&")[0]) : 0;
-					String title = mDes.group(2).split("/")[0];
+					String title = mDes.group(2).split("/")[0].trim();
 					String author = mDes.group(2).split("/")[1].split(";")[0];
 					String publisher = mDes.group(3);
 					String no = mDes.group(4);

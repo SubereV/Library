@@ -22,7 +22,7 @@ public interface BookRepository extends CrudRepository<Book, Integer> {
 
 	@Query("select b.id from Book b")
 	List<Integer> findAllId();
-	@Query("select b.id, b.title from Book b where b.category is null")
+	@Query("select b.id, b.title, b.author, b.available, b.total from Book b where b.category is null")
 	List<String[]> findByCategoryNull();
 	Book findByTitle(String title);
 }

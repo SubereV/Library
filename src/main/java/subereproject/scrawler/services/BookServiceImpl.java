@@ -1,11 +1,12 @@
 package subereproject.scrawler.services;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import subereproject.scrawler.models.Book;
+import subereproject.scrawler.models.BookCopies;
 import subereproject.scrawler.repositories.BookRepository;
 
 @Service
@@ -46,43 +47,35 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
+	public List<String> getAllTitles(){
+		return bookRepository.findAllByTitle();
+	}
+
+	@Override
 	public boolean existsById(Integer id) {
 		return bookRepository.existsById(id);
 	}
 
-	@Override
-	public List<Book> findAll() {
-		return (List<Book>) bookRepository.findAll();
+	private Map<String, Object> getBookInfo(Book book){
+		Map<String, Object> details = new HashMap<>();
+		details.put("id", book.getId());
+		details.put("title", book.getTitle());
+		details.put("author", book.getAuthor());
+		details.put("available", book.getAvailable());
+		details.put("total", book.getTotal());
+		return details;
 	}
-
 	@Override
-	public List<Book> findAllById(List<Integer> ids) {
-		return (List<Book>) bookRepository.findAllById(ids);
-	}
-
-	@Override
-	public long count() {
-		return bookRepository.count();
-	}
-
-	@Override
-	public void deleteById(Integer id) {
-		bookRepository.deleteById(id);
-	}
-
-	@Override
-	public void delete(Book entity) {
-		bookRepository.delete(entity);
-	}
-
-	@Override
-	public void deleteAll(List<Book> entities) {
-		bookRepository.deleteAll(entities);
-	}
-
-	@Override
-	public void deleteAll() {
-		bookRepository.deleteAll();
+	public Set random30Books() {
+		Integer total = findAllId().size();
+		List<Book> allBooks = (List<Book>) bookRepository.findAll();
+		Set<Map<String, Object>> books =  new HashSet<>();
+		for (int i = 0; i < 30; i++) {
+			Book book = allBooks.get(new Random().nextInt(total-i));
+			books.add(getBookInfo(book));
+			allBooks.remove(book);
+		}
+		return books;
 	}
 
 	@Override

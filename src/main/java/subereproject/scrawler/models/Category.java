@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Nationalized;
 
 import lombok.AllArgsConstructor;
@@ -31,6 +32,7 @@ public class Category implements Serializable {
 	@Nationalized
 	private String name;
 	@OneToMany(fetch = FetchType.EAGER,mappedBy = "category")
+	@JsonIgnore
 	private List<Book> books;
 
 }

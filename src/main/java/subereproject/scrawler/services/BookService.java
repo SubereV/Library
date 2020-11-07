@@ -2,26 +2,17 @@ package subereproject.scrawler.services;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import subereproject.scrawler.models.Book;
 
 public interface BookService {
 
-	void deleteAll();
+	Set random30Books();
 
-	void deleteAll(List<Book> entities);
+    List<String> getAllTitles();
 
-	void delete(Book entity);
-
-	void deleteById(Integer id);
-
-	long count();
-
-	List<Book> findAllById(List<Integer> ids);
-
-	List<Book> findAll();
-
-	boolean existsById(Integer id);
+    boolean existsById(Integer id);
 
 	Optional<Book> findById(Integer id);
 

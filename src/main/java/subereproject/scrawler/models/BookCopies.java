@@ -1,5 +1,7 @@
 package subereproject.scrawler.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -27,6 +29,7 @@ public class BookCopies implements Serializable {
 	private String store;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "bookId")
+	@JsonIgnore
 	private Book book;
 
 	public BookCopies(String code, String status, String store, Book book) {

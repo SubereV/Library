@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import subereproject.scrawler.models.Book;
-import subereproject.scrawler.models.BookCopies;
 import subereproject.scrawler.repositories.BookRepository;
 
 @Service
@@ -14,7 +13,8 @@ public class BookServiceImpl implements BookService {
 
 	@Autowired
 	private BookRepository bookRepository;
-
+	@Autowired
+	private CategoryService categoryService;
 	@Override
 	public List<Integer> findAllId() {
 		return bookRepository.findAllId();
@@ -48,7 +48,7 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public List<String> getAllTitles(){
-		return bookRepository.findAllByTitle();
+		return bookRepository.findAllTitles();
 	}
 
 	@Override
@@ -66,7 +66,7 @@ public class BookServiceImpl implements BookService {
 		return details;
 	}
 	@Override
-	public Set random30Books() {
+	public Set getRandom30Books() {
 		Integer total = findAllId().size();
 		List<Book> allBooks = (List<Book>) bookRepository.findAll();
 		Set<Map<String, Object>> books =  new HashSet<>();
@@ -82,5 +82,14 @@ public class BookServiceImpl implements BookService {
 	public void updateBook(int available, int total, String status,  int id) {
 		bookRepository.updateBook(available, total, status, id);
 	}
-	
+
+	@Override
+	public Set<Map> getBookByCategory(Integer cateID, Integer limit){
+		List<Book> books = bookRepository.findByCategory(categoryService.findById(cateID).get());
+		Set<Map> result = new HashSet<>();
+		for (int i = (limit-1)*20; i < limit * 20; i++) {
+			result.add(getBookInfo(books.get(i)));
+		}
+		return result;
+	}
 }

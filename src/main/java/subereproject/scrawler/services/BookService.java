@@ -1,6 +1,7 @@
 package subereproject.scrawler.services;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
@@ -8,7 +9,7 @@ import subereproject.scrawler.models.Book;
 
 public interface BookService {
 
-	Set random30Books();
+	Set getRandom30Books();
 
     List<String> getAllTitles();
 
@@ -28,6 +29,5 @@ public interface BookService {
 
 	Book findByTitle(String title);
 
-	
-
+	Set<Map> getBookByCategory(Integer cateID, Integer limit);
 }

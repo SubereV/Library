@@ -26,6 +26,13 @@
 			<artifactId>lucene-core</artifactId>
 			<version>5.5.4</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-search-jbossmodules-elasticsearch -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-search-jbossmodules-elasticsearch</artifactId>
+			<version>5.11.5.Final</version>
+			<type>pom</type>
+		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate</groupId>

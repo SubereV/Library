@@ -1,4 +1,4 @@
-package subereproject.scrawler.services;
+package subereproject.scrawler.services.impl;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -18,6 +18,9 @@ import org.springframework.stereotype.Service;
 import subereproject.scrawler.models.Book;
 import subereproject.scrawler.models.BookCopies;
 import subereproject.scrawler.models.PageList;
+import subereproject.scrawler.services.BookService;
+import subereproject.scrawler.services.CopiesService;
+import subereproject.scrawler.services.FindnBookService;
 
 @Service
 public class FindnBookServiceImpl implements FindnBookService {

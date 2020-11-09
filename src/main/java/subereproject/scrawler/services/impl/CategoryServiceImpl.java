@@ -1,4 +1,4 @@
-package subereproject.scrawler.services;
+package subereproject.scrawler.services.impl;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import subereproject.scrawler.models.Category;
 import subereproject.scrawler.repositories.CategoryRepository;
+import subereproject.scrawler.services.CategoryService;
 @Service
 public class CategoryServiceImpl implements CategoryService {
 	@Autowired

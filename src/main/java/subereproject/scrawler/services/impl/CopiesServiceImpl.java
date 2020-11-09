@@ -1,4 +1,4 @@
-package subereproject.scrawler.services;
+package subereproject.scrawler.services.impl;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import subereproject.scrawler.models.BookCopies;
 import subereproject.scrawler.repositories.CopiesRepository;
+import subereproject.scrawler.services.CopiesService;
 
 @Service
 public class CopiesServiceImpl implements CopiesService {

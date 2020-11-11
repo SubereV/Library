@@ -40,6 +40,7 @@ public class BooksApi {
     public ResponseEntity getTitle(@PathVariable String title){
         return ResponseEntity.ok(bookService.findByTitle(title));
     }
+
     //todo: fetch author - /author={String}&page={int}
 
     //todo: fetch new - /new={boolean}&page={int}

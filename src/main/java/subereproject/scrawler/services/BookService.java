@@ -19,7 +19,11 @@ public interface BookService {
 
 	List<Book> saveAll(List<Book> entities);
 
-	public void updateBook(int available, int total, String status, int id);
+    void indexBooks() throws Exception;
+
+    List<Book> searchBookByKeyword(String keyword);
+
+    public void updateBook(int available, int total, String status, int id);
 
 	Book save(Book entity);
 

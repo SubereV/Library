@@ -8,8 +8,13 @@ import javax.persistence.*;
 import org.hibernate.annotations.Nationalized;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Index;
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.TermVector;
 
 @Entity
+@Indexed
 @Table(name = "Books")
 @Data
 @NoArgsConstructor
@@ -22,8 +27,10 @@ public class Book implements Serializable {
 	@Id
 	private int id;
 	@Nationalized
+	@Field(termVector = TermVector.YES)
 	private String title;
 	@Nationalized
+	@Field(termVector = TermVector.YES)
 	private String author;
 	@Nationalized
 	private String type;

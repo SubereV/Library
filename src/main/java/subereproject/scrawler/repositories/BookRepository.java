@@ -28,4 +28,10 @@ public interface BookRepository extends CrudRepository<Book, Integer> {
 	Book findByTitle(String title);
 	List<Book> findAllByAuthor(String author);
 	List<Book> findByCategory(Category category);
+	@Query(
+			value = "SELECT * FROM books WHERE " +
+					"Match (title,author) " +
+					"AGAINST(?1)",
+			nativeQuery = true)
+	List<Book> searchTitleAuthor(String keyword);
 }

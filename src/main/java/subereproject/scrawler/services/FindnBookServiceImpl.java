@@ -114,7 +114,7 @@ public class FindnBookServiceImpl implements FindnBookService {
 	public void FindNewBook() {
 		int fault = 0, index = 0, id = 0;
 		List<Integer> bookID = bookService.findAllId();
-		ExecutorService executorService = Executors.newFixedThreadPool(3);
+		ExecutorService executorService = Executors.newFixedThreadPool(2);
 		while (fault < 100) {
 			if (index != bookID.get(id)) {
 				fault = scan(index) ? 0 : ++fault;

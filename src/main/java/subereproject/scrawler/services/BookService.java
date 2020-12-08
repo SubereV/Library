@@ -30,4 +30,6 @@ public interface BookService {
 	Book findByTitle(String title);
 
 	Set<Map> getBookByCategory(Integer cateID, Integer limit);
+
+    Set getBooksByTitleAuthor(String keyword);
 }

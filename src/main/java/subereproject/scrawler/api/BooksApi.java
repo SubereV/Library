@@ -23,12 +23,6 @@ public class BooksApi {
         return ResponseEntity.ok(bookService.findById(id).get());
     }
 
-    @GetMapping("/titles")
-    public ResponseEntity getAllTitles() {
-        return ResponseEntity.ok(bookService.getAllTitles());
-    }
-
-    //Todo: fetch category - /category={int}&page={int}
     @GetMapping
     public ResponseEntity getBookByCategory(@RequestParam Integer category, @RequestParam Integer page) {
         if (page == null) page = 1;
@@ -40,8 +34,15 @@ public class BooksApi {
     public ResponseEntity getTitle(@PathVariable String title){
         return ResponseEntity.ok(bookService.findByTitle(title));
     }
-    //todo: fetch author - /author={String}&page={int}
 
-    //todo: fetch new - /new={boolean}&page={int}
+    @GetMapping("/search/{keyword}")
+    public ResponseEntity search(@PathVariable String keyword){
+        return ResponseEntity.ok(bookService.getBooksByTitleAuthor(keyword));
+    }
 
+    // not need
+    @GetMapping("/titles")
+    public ResponseEntity getAllTitles() {
+        return ResponseEntity.ok(bookService.getAllTitles());
+    }
 }

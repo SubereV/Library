@@ -103,7 +103,7 @@ public class UpdateBookDBServiceImpl implements UpdateBookDBService {
 	@Override
 	@Scheduled(cron = "0 0 8-16/2 * * Mon-Sat")
 	public void updateBooks() {
-		ExecutorService executorService = Executors.newFixedThreadPool(5);
+		ExecutorService executorService = Executors.newFixedThreadPool(2);
 		for (Integer index : bookService.findAllId()) {
 			scan(index);
 		}

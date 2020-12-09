@@ -19,51 +19,8 @@ import subereproject.scrawler.services.CopiesService;
 @Controller
 @RequestMapping("/")
 public class HomeController {
-	@Autowired
-	private CopiesService copyCopiesService;
-
-	@Autowired
-	private BookService bookService;
-
-	@Autowired
-	private CategoryService categoryService;
-
 	@GetMapping
 	public String index() {
 		return "index";
-	}
-
-	@RequestMapping("book")
-	public String book() {
-		return "book-details";
-	}
-
-	@RequestMapping("contact")
-	public String contact() {
-		return "contact";
-	}
-
-	@RequestMapping("favorite")
-	public String test() {
-		return "bookList";
-	}
-
-	@SuppressWarnings("rawtypes")
-	@ModelAttribute(name = "topPopularBooks")
-	public List<Book> findById() {
-		List<Book> books = new ArrayList<>();
-		List<Integer> bookIds = copyCopiesService.findTop7MostBorrowedBookId();
-
-		for (Iterator iterator = bookIds.iterator(); iterator.hasNext();) {
-			Integer id = (Integer) iterator.next();
-
-			books.add(bookService.findById(id).get());
-		}
-		return books;
-	}
-
-	@ModelAttribute(name = "categories")
-	public List<Category> getCateList() {
-		return categoryService.findAll();
 	}
 }

@@ -25,8 +25,8 @@ public class BooksApi {
 
     @GetMapping
     public ResponseEntity getBookByCategory(@RequestParam Integer category, @RequestParam Integer page) {
-        if (page == null) page = 1;
-        if (category == null) category = 1;
+        if (page == null||page<1) page = 1;
+        if (category == null||category<1) category = 1;
         return ResponseEntity.ok(bookService.getBookByCategory(category, page));
     }
 

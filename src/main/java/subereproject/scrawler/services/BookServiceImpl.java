@@ -85,15 +85,22 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Set<Map> getBookByCategory(Integer cateID, Integer limit) {
+    public Map<String, Object> getBookByCategory(Integer cateID, Integer limit) {
         List<Book> books = bookRepository.findByCategory(categoryService.findById(cateID).get());
-        Set<Map> result = new HashSet<>();
+        List<Object> books1 =new ArrayList<>();
+        Map<String, Object> object = new HashMap<>();
+        Map<String,Integer> pages = new HashMap<>();
+        pages.put("total_page",books.size()/20+(books.size()%20==0?0:1));
+        pages.put("current_page",limit);
+        object.put("pages",pages);
         for (int i = (limit - 1) * 20; i < limit * 20; i++) {
             if (i < books.size()) {
-                result.add(getBookInfo(books.get(i)));
+                books1.add(getBookInfo(books.get(i)));
             }
         }
-        return result;
+        object.put("books",books1);
+
+        return object;
     }
 
     @Override
@@ -106,4 +113,5 @@ public class BookServiceImpl implements BookService {
         }
         return result;
     }
+
 }

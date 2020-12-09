@@ -18,7 +18,7 @@ jobs:
     - name: Set up Java version
       uses: actions/setup-java@v1
       with:
-        java-version: '11'
+        java-version: '8'
 
     - name: Build with Maven
       run: mvn clean install
@@ -28,5 +28,5 @@ jobs:
       with:
         app-name: 'fudn-library'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_4c271b7ea5f9454184ce817a6c547148 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_263170e23f4a45c9b7cf5af309784ea5 }}
         package: '${{ github.workspace }}/target/*.jar'

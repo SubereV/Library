@@ -29,4 +29,4 @@ jobs:
         app-name: 'fudn-library'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_fb1e609dcdbb410987ced34d4cd15210 }}
-        package: '${{ github.workspace }}/target/*.war'
+        package: '${{ github.workspace }}/target/*.jar'

@@ -31,6 +31,8 @@ public class Category implements Serializable {
 	private int id;
 	@Nationalized
 	private String name;
+	private String bck_picture;
+	private String thumbnail;
 	@OneToMany(fetch = FetchType.EAGER,mappedBy = "category")
 	@JsonIgnore
 	private List<Book> books;

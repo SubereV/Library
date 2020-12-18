@@ -32,4 +32,6 @@ public interface BookService {
 	Map<String, Object> getBookByCategory(Integer cateID, Integer limit);
 
     Set getBooksByTitleAuthor(String keyword);
+
+	Set getTheMostBookBorrowed();
 }

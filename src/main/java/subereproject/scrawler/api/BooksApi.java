@@ -40,6 +40,12 @@ public class BooksApi {
         return ResponseEntity.ok(bookService.getBooksByTitleAuthor(keyword));
     }
 
+    // TODO: 12/18/2020 Top 10 books borrowed
+    @GetMapping("/the-most-borrowed")
+    public ResponseEntity get10theMostBorrowedBooks(){
+        return ResponseEntity.ok(bookService.getTheMostBookBorrowed());
+    }
+
     // not need
     @GetMapping("/titles")
     public ResponseEntity getAllTitles() {

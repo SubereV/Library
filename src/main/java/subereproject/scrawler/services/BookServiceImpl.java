@@ -114,4 +114,14 @@ public class BookServiceImpl implements BookService {
         return result;
     }
 
+    @Override
+    public Set getTheMostBookBorrowed(){
+        List<Book> books =  bookRepository.findThe10MostBorrowedBooks();
+        Set<Map> result = new HashSet<>();
+        for (Book b :
+                books) {
+            result.add(getBookInfo(b));
+        }
+        return result;
+    }
 }

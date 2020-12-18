@@ -10,7 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "Books")
+@Table(name = "books")
 @Data
 @NoArgsConstructor
 public class Book implements Serializable {
@@ -40,7 +40,7 @@ public class Book implements Serializable {
 	@OneToMany(mappedBy = "book")
 	private List<BookCopies> copies;
 	@ManyToOne
-	@JoinColumn(name = "cateID")
+	@JoinColumn(name = "cateid")
 	private Category category;
 
 	public Book(int id, String title, String author, String type, String publisher, String no, int available, int total,

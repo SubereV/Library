@@ -1,5 +1,6 @@
 package subereproject.scrawler.repositories;
 
+import java.awt.print.Pageable;
 import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.data.jpa.repository.Modifying;
@@ -34,4 +35,6 @@ public interface BookRepository extends CrudRepository<Book, Integer> {
 					"AGAINST(?1)",
 			nativeQuery = true)
 	List<Book> searchTitleAuthor(String keyword);
+	@Query(value= "select * from books order by (total-available) DESC LIMIT 10", nativeQuery=true)
+	List<Book> findThe10MostBorrowedBooks();
 }

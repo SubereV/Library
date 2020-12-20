@@ -67,11 +67,11 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Set getRandom30Books() {
+    public Set getRandomBooks(int num) {
         Integer total = findAllId().size();
         List<Book> allBooks = (List<Book>) bookRepository.findAll();
         Set<Map<String, Object>> books = new HashSet<>();
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < num; i++) {
             Book book = allBooks.get(new Random().nextInt(total - i));
             books.add(getBookInfo(book));
             allBooks.remove(book);
@@ -85,15 +85,15 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Map<String, Object> getBookByCategory(Integer cateID, Integer limit) {
+    public Map<String, Object> getBookByCategory(Integer cateID, Integer page, Integer books_per_page) {
         List<Book> books = bookRepository.findByCategory(categoryService.findById(cateID).get());
         List<Object> books1 =new ArrayList<>();
         Map<String, Object> object = new HashMap<>();
         Map<String,Integer> pages = new HashMap<>();
-        pages.put("total_page",books.size()/20+(books.size()%20==0?0:1));
-        pages.put("current_page",limit);
+        pages.put("total_page",books.size()/books_per_page+(books.size()%books_per_page==0?0:1));
+        pages.put("current_page",page);
         object.put("pages",pages);
-        for (int i = (limit - 1) * 20; i < limit * 20; i++) {
+        for (int i = (page - 1) * books_per_page; i < page * books_per_page; i++) {
             if (i < books.size()) {
                 books1.add(getBookInfo(books.get(i)));
             }
@@ -115,8 +115,8 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Set getTheMostBookBorrowed(){
-        List<Book> books =  bookRepository.findThe10MostBorrowedBooks();
+    public Set getTheMostBookBorrowed(Integer amount){
+        List<Book> books =  bookRepository.findTheMostBorrowedBooks(amount);
         Set<Map> result = new HashSet<>();
         for (Book b :
                 books) {

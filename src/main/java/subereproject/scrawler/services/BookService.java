@@ -9,8 +9,6 @@ import subereproject.scrawler.models.Book;
 
 public interface BookService {
 
-	Set getRandom30Books();
-
     List<String> getAllTitles();
 
     boolean existsById(Integer id);
@@ -18,6 +16,8 @@ public interface BookService {
 	Optional<Book> findById(Integer id);
 
 	List<Book> saveAll(List<Book> entities);
+
+	Set getRandomBooks(int num);
 
 	public void updateBook(int available, int total, String status, int id);
 
@@ -29,9 +29,9 @@ public interface BookService {
 
 	Book findByTitle(String title);
 
-	Map<String, Object> getBookByCategory(Integer cateID, Integer limit);
+	Map<String, Object> getBookByCategory(Integer cateID, Integer page, Integer book_per_page);
 
     Set getBooksByTitleAuthor(String keyword);
 
-	Set getTheMostBookBorrowed();
+	Set getTheMostBookBorrowed(Integer amount);
 }

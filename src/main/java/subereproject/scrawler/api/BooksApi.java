@@ -12,10 +12,10 @@ public class BooksApi {
     @Autowired
     private BookService bookService;
 
-    @GetMapping("/")
-    public ResponseEntity allBooks() {
-        System.out.println(bookService.getRandom30Books().size());
-        return ResponseEntity.ok(bookService.getRandom30Books());
+    @GetMapping("/amounts/{num}")
+    public ResponseEntity allBooks(@PathVariable Integer num) {
+        System.out.println(bookService.getRandomBooks(num).size());
+        return ResponseEntity.ok(bookService.getRandomBooks(num));
     }
 
     @GetMapping("/{id}")
@@ -24,26 +24,23 @@ public class BooksApi {
     }
 
     @GetMapping
-    public ResponseEntity getBookByCategory(@RequestParam Integer category, @RequestParam Integer page) {
-        if (page == null||page<1) page = 1;
-        if (category == null||category<1) category = 1;
-        return ResponseEntity.ok(bookService.getBookByCategory(category, page));
+    public ResponseEntity getBookByCategory(@RequestParam(defaultValue = "1") Integer category, @RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "12") Integer books_per_page) {
+        return ResponseEntity.ok(bookService.getBookByCategory(category, page, books_per_page));
     }
 
     @GetMapping("/titles/{title}")
-    public ResponseEntity getTitle(@PathVariable String title){
+    public ResponseEntity getTitle(@PathVariable String title) {
         return ResponseEntity.ok(bookService.findByTitle(title));
     }
 
     @GetMapping("/search/{keyword}")
-    public ResponseEntity search(@PathVariable String keyword){
+    public ResponseEntity search(@PathVariable String keyword) {
         return ResponseEntity.ok(bookService.getBooksByTitleAuthor(keyword));
     }
 
-    // TODO: 12/18/2020 Top 10 books borrowed
     @GetMapping("/the-most-borrowed")
-    public ResponseEntity get10theMostBorrowedBooks(){
-        return ResponseEntity.ok(bookService.getTheMostBookBorrowed());
+    public ResponseEntity get10theMostBorrowedBooks(@RequestParam(defaultValue = "12") Integer amount) {
+        return ResponseEntity.ok(bookService.getTheMostBookBorrowed(amount));
     }
 
     // not need

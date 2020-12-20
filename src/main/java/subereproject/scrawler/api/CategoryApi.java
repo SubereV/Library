@@ -10,18 +10,19 @@ import subereproject.scrawler.services.CategoryService;
 import java.util.*;
 
 @RestController
-@RequestMapping("category-api")
+@RequestMapping("api/categories")
 public class CategoryApi {
     @Autowired
     private CategoryService categoryService;
 
-    @GetMapping
+    @GetMapping("/")
     public ResponseEntity getAllCategories() {
         Set<Map<String, String>> categories = new HashSet<>();
         categoryService.findAll().forEach(category -> {
             Map<String, String> cate = new HashMap<>();
             cate.put("id", String.valueOf(category.getId()));
             cate.put("name", category.getName());
+            cate.put("thumbnail",category.getThumbnail());
             categories.add(cate);
         });
         return ResponseEntity.ok(categories);

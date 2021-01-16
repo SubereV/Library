@@ -34,4 +34,6 @@ public interface BookService {
     Set getBooksByTitleAuthor(String keyword);
 
 	Set getTheMostBookBorrowed(Integer amount);
+
+    Object getTheNewestBook(Integer amount);
 }

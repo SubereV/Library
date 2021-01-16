@@ -1,6 +1,7 @@
 package subereproject.scrawler.models;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.*;
@@ -33,6 +34,8 @@ public class Book implements Serializable {
 	private String no;
 	private int available;
 	private int total;
+	@Temporal(TemporalType.DATE)
+	private Date comingdate;
 	@Nationalized
 	private String status;
 	@Column(columnDefinition = "NVARCHAR(MAX)")
@@ -44,7 +47,7 @@ public class Book implements Serializable {
 	private Category category;
 
 	public Book(int id, String title, String author, String type, String publisher, String no, int available, int total,
-			String status) {
+			String status, Date date) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -53,6 +56,7 @@ public class Book implements Serializable {
 		this.publisher = publisher;
 		this.no = no;
 		this.available = available;
+		this.comingdate = date;
 		this.total = total;
 		this.status = status;
 	}

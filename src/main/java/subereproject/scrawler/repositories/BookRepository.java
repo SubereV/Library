@@ -37,4 +37,7 @@ public interface BookRepository extends CrudRepository<Book, Integer> {
 	List<Book> searchTitleAuthor(String keyword);
 	@Query(value= "select * from books order by (total-available) DESC LIMIT :amount", nativeQuery=true)
 	List<Book> findTheMostBorrowedBooks(@Param("amount") int amount);
+
+	@Query(value= "select * from books order by books.comingdate DESC LIMIT :amount", nativeQuery=true)
+	List<Book> findTheNewestBooks(@Param("amount") int amount);
 }

@@ -124,4 +124,15 @@ public class BookServiceImpl implements BookService {
         }
         return result;
     }
+
+    @Override
+    public Object getTheNewestBook(Integer amount) {
+        List<Book> books =  bookRepository.findTheNewestBooks(amount);
+        Set<Map> result = new HashSet<>();
+        for (Book b :
+                books) {
+            result.add(getBookInfo(b));
+        }
+        return result;
+    }
 }

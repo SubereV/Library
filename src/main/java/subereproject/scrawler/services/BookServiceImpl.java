@@ -15,6 +15,7 @@ public class BookServiceImpl implements BookService {
     private BookRepository bookRepository;
     @Autowired
     private CategoryService categoryService;
+
     @Override
     public List<Integer> findAllId() {
         return bookRepository.findAllId();
@@ -86,25 +87,31 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Map<String, Object> getBookByCategory(Integer cateID, Integer page, Integer books_per_page) {
-        List<Book> books = bookRepository.findByCategory(categoryService.findById(cateID).get());
-        List<Object> books1 =new ArrayList<>();
+        List<Book> books;
+        if (cateID == 0) {
+            books = bookRepository.findAllByOrderByTitle();
+        } else {
+
+            books = bookRepository.findByCategoryOrderByTitle(categoryService.findById(cateID).get());
+        }
+        List<Object> books1 = new ArrayList<>();
         Map<String, Object> object = new HashMap<>();
-        Map<String,Integer> pages = new HashMap<>();
-        pages.put("total_page",books.size()/books_per_page+(books.size()%books_per_page==0?0:1));
-        pages.put("current_page",page);
-        object.put("pages",pages);
+        Map<String, Integer> pages = new HashMap<>();
+        pages.put("total_page", books.size() / books_per_page + (books.size() % books_per_page == 0 ? 0 : 1));
+        pages.put("current_page", page);
+        object.put("pages", pages);
         for (int i = (page - 1) * books_per_page; i < page * books_per_page; i++) {
             if (i < books.size()) {
                 books1.add(getBookInfo(books.get(i)));
             }
         }
-        object.put("books",books1);
+        object.put("books", books1);
 
         return object;
     }
 
     @Override
-    public Set getBooksByTitleAuthor(String keyword){
+    public Set getBooksByTitleAuthor(String keyword) {
         List<Book> books = bookRepository.searchTitleAuthor(keyword);
         Set<Map> result = new HashSet<>();
         for (Book b :
@@ -115,8 +122,8 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Set getTheMostBookBorrowed(Integer amount){
-        List<Book> books =  bookRepository.findTheMostBorrowedBooks(amount);
+    public Set getTheMostBookBorrowed(Integer amount) {
+        List<Book> books = bookRepository.findTheMostBorrowedBooks(amount);
         Set<Map> result = new HashSet<>();
         for (Book b :
                 books) {
@@ -127,7 +134,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Object getTheNewestBook(Integer amount) {
-        List<Book> books =  bookRepository.findTheNewestBooks(amount);
+        List<Book> books = bookRepository.findTheNewestBooks(amount);
         Set<Map> result = new HashSet<>();
         for (Book b :
                 books) {

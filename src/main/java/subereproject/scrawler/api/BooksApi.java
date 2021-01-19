@@ -24,7 +24,7 @@ public class BooksApi {
     }
 
     @GetMapping
-    public ResponseEntity getBookByCategory(@RequestParam(defaultValue = "1") Integer category, @RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "12") Integer books_per_page) {
+    public ResponseEntity getBookByCategory(@RequestParam(defaultValue = "0") Integer category, @RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "12") Integer books_per_page) {
         return ResponseEntity.ok().header("content-type:","application/json;charset=UTF-8").body(bookService.getBookByCategory(category, page, books_per_page));
     }
 

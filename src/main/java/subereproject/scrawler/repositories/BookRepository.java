@@ -28,7 +28,7 @@ public interface BookRepository extends CrudRepository<Book, Integer> {
 	List<String[]> findByCategoryNull();
 	Book findByTitle(String title);
 	List<Book> findAllByAuthor(String author);
-	List<Book> findByCategory(Category category);
+	List<Book> findByCategoryOrderByTitle(Category category);
 	@Query(
 			value = "SELECT * FROM books WHERE " +
 					"Match (title,author) " +
@@ -40,4 +40,5 @@ public interface BookRepository extends CrudRepository<Book, Integer> {
 
 	@Query(value= "select * from books order by books.comingdate DESC LIMIT :amount", nativeQuery=true)
 	List<Book> findTheNewestBooks(@Param("amount") int amount);
+	List<Book> findAllByOrderByTitle();
 }

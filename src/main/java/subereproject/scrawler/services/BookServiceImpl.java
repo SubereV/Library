@@ -89,9 +89,8 @@ public class BookServiceImpl implements BookService {
     public Map<String, Object> getBookByCategory(Integer cateID, Integer page, Integer books_per_page) {
         List<Book> books;
         if (cateID == 0) {
-            books = bookRepository.findAllByOrderByTitle();
+            books = bookRepository.findAllByOrderByTitleAsc();
         } else {
-
             books = bookRepository.findByCategoryOrderByTitle(categoryService.findById(cateID).get());
         }
         List<Object> books1 = new ArrayList<>();
